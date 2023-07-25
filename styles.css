@@ -1,0 +1,10 @@
+.ma-div {
+    /* Appliquez une largeur à la div pour qu'elle ne prenne pas toute la largeur de l'écran */
+    width: 100%;
+    /* Ajoutez une marge à droite pour laisser de l'espace pour l'image */
+    margin-right: 10px;
+    /* Ajoutez un style de bordure pour mieux visualiser la div (facultatif) */
+    border: 1px solid #ccc;
+    /* Appliquez une propriété float pour que la div se comporte comme un élément en ligne et l'image peut être placée à côté */
+    float: right;
+}

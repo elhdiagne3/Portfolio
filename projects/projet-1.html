@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prédiction du churn — [Prénom Nom]</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="../index.html" class="logo">[Prénom Nom]</a>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="../projects.html">Projets</a></li>
+      <li><a href="../cv.html">CV</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+      <li><button id="theme-toggle" class="icon-btn" aria-label="Thème">🌙</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="case-study">
+  <a href="../projects.html" class="link-arrow">← Tous les projets</a>
+
+  <header class="case-head">
+    <h1>Prédiction du churn client</h1>
+    <p class="stack">Python · scikit-learn · XGBoost · MLflow</p>
+  </header>
+
+  <section>
+    <h2>Contexte</h2>
+    <p>Un opérateur télécom perd ~25 % de ses clients par an. Objectif : identifier les clients à risque pour cibler les campagnes de rétention.</p>
+  </section>
+
+  <section>
+    <h2>Données</h2>
+    <p>Dataset public Kaggle : 7 043 clients, 21 variables. Déséquilibre 73/27 en faveur des non-churners.</p>
+  </section>
+
+  <section>
+    <h2>Méthodologie</h2>
+    <ul>
+      <li>Nettoyage et feature engineering (ancienneté, ratio charges/services).</li>
+      <li>Encodage one-hot, scaling sur variables numériques.</li>
+      <li>Comparaison LogReg / RandomForest / XGBoost avec validation croisée 5-fold stratifiée.</li>
+      <li>Optimisation bayésienne (Optuna) + seuil calibré sur coût métier.</li>
+      <li>Suivi des expériences avec MLflow.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Résultats</h2>
+    <ul>
+      <li><strong>ROC-AUC :</strong> 0,86 (XGBoost)</li>
+      <li><strong>Recall (classe churn) :</strong> 0,79</li>
+      <li><strong>Gain estimé :</strong> 12 % de churn évité sur échantillon test</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Limites & pistes</h2>
+    <p>Dataset statique, pas de données temporelles. Pistes : features comportementales, modèle de survie, déploiement API avec monitoring.</p>
+  </section>
+
+  <section class="links">
+    <h2>Liens</h2>
+    <p>
+      <a href="#" class="btn">Code GitHub</a>
+      <a href="#" class="btn btn-outline">Démo Streamlit</a>
+    </p>
+  </section>
+</main>
+
+<footer id="contact" class="site-footer">
+  <h2>Contact</h2>
+  <p>Email : <a href="mailto:vous@example.com">vous@example.com</a></p>
+  <p>
+    <a href="https://github.com/votre-user">GitHub</a> ·
+    <a href="https://linkedin.com/in/votre-user">LinkedIn</a>
+  </p>
+  <p class="copyright">© <span class="year"></span> [Prénom Nom]</p>
+</footer>
+<script src="../js/script.js"></script>
+
+</body>
+</html>

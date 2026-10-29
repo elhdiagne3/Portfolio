@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets — [Prénom Nom]</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">[Prénom Nom]</a>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projects.html">Projets</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><button id="theme-toggle" class="icon-btn" aria-label="Thème">🌙</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="page-head">
+    <h1>Projets</h1>
+    <p class="intro">Une sélection de projets data — de l'exploration au déploiement.</p>
+  </section>
+
+  <section>
+    <div class="project-grid">
+      <article class="project-card">
+        <h3>Prédiction du churn client</h3>
+        <p>Modèle XGBoost pour anticiper la résiliation sur un dataset télécom (7k clients).</p>
+        <p class="stack">Python · scikit-learn · MLflow</p>
+        <a href="projects/projet-1.html">Voir l'étude de cas →</a>
+      </article>
+      <article class="project-card">
+        <h3>Dashboard ventes interactif</h3>
+        <p>Application Streamlit explorant 3 ans de ventes e-commerce avec segmentation RFM.</p>
+        <p class="stack">Streamlit · Plotly · Pandas</p>
+        <a href="projects/projet-2.html">Voir l'étude de cas →</a>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer id="contact" class="site-footer">
+  <h2>Contact</h2>
+  <p>Email : <a href="mailto:vous@example.com">vous@example.com</a></p>
+  <p>
+    <a href="https://github.com/votre-user">GitHub</a> ·
+    <a href="https://linkedin.com/in/votre-user">LinkedIn</a>
+  </p>
+  <p class="copyright">© <span class="year"></span> [Prénom Nom]</p>
+</footer>
+<script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard ventes — [Prénom Nom]</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="../index.html" class="logo">[Prénom Nom]</a>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="../projects.html">Projets</a></li>
+      <li><a href="../cv.html">CV</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+      <li><button id="theme-toggle" class="icon-btn" aria-label="Thème">🌙</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="case-study">
+  <a href="../projects.html" class="link-arrow">← Tous les projets</a>
+
+  <header class="case-head">
+    <h1>Dashboard ventes interactif</h1>
+    <p class="stack">Streamlit · Plotly · Pandas · RFM</p>
+  </header>
+
+  <section>
+    <h2>Contexte</h2>
+    <p>Une PME e-commerce veut mieux comprendre ses ventes et identifier ses clients les plus rentables.</p>
+  </section>
+
+  <section>
+    <h2>Données</h2>
+    <p>3 ans de transactions (~500k lignes), clients, produits, dates, montants.</p>
+  </section>
+
+  <section>
+    <h2>Méthodologie</h2>
+    <ul>
+      <li>Nettoyage (retours, doublons, valeurs manquantes).</li>
+      <li>Segmentation RFM avec clustering K-Means.</li>
+      <li>Dashboard Streamlit avec filtres temporels et par segment.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Résultats</h2>
+    <ul>
+      <li>Identification de 5 segments clients actionnables.</li>
+      <li>20 % des clients génèrent 65 % du chiffre d'affaires.</li>
+      <li>Dashboard utilisé par l'équipe marketing.</li>
+    </ul>
+  </section>
+
+  <section class="links">
+    <h2>Liens</h2>
+    <p>
+      <a href="#" class="btn">Code GitHub</a>
+      <a href="#" class="btn btn-outline">Démo live</a>
+    </p>
+  </section>
+</main>
+
+<footer id="contact" class="site-footer">
+  <h2>Contact</h2>
+  <p>Email : <a href="mailto:vous@example.com">vous@example.com</a></p>
+  <p>
+    <a href="https://github.com/votre-user">GitHub</a> ·
+    <a href="https://linkedin.com/in/votre-user">LinkedIn</a>
+  </p>
+  <p class="copyright">© <span class="year"></span> [Prénom Nom]</p>
+</footer>
+<script src="../js/script.js"></script>
+
+</body>
+</html>

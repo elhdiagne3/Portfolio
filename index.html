@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de [Prénom Nom], Data Scientist.">
+  <title>[Prénom Nom] — Data Scientist</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">[Prénom Nom]</a>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projects.html">Projets</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><button id="theme-toggle" class="icon-btn" aria-label="Thème">🌙</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <p class="eyebrow">Data Scientist</p>
+    <h1>Je transforme les données<br>en décisions concrètes.</h1>
+    <p class="intro">
+      [Une à deux phrases : votre parcours, vos spécialités — ML, NLP,
+      dataviz, MLOps — et ce qui vous anime.]
+    </p>
+    <div class="cta">
+      <a href="projects.html" class="btn">Voir mes projets</a>
+      <a href="cv.html" class="btn btn-outline">Mon CV</a>
+    </div>
+  </section>
+
+  <section class="skills">
+    <h2>Compétences</h2>
+    <ul class="skill-list">
+      <li>Python</li><li>SQL</li><li>Pandas</li><li>scikit-learn</li>
+      <li>TensorFlow</li><li>MLflow</li><li>Docker</li><li>Streamlit</li>
+    </ul>
+  </section>
+
+  <section class="featured-projects">
+    <div class="section-head">
+      <h2>Projets phares</h2>
+      <a href="projects.html" class="link-arrow">Tous les projets →</a>
+    </div>
+    <div class="project-grid">
+      <article class="project-card">
+        <h3>Prédiction du churn client</h3>
+        <p>Modèle XGBoost pour anticiper la résiliation sur un dataset télécom (7k clients).</p>
+        <p class="stack">Python · scikit-learn · MLflow</p>
+        <a href="projects/projet-1.html">Voir l'étude de cas →</a>
+      </article>
+      <article class="project-card">
+        <h3>Dashboard ventes interactif</h3>
+        <p>Application Streamlit explorant 3 ans de ventes e-commerce avec segmentation RFM.</p>
+        <p class="stack">Streamlit · Plotly · Pandas</p>
+        <a href="projects/projet-2.html">Voir l'étude de cas →</a>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer id="contact" class="site-footer">
+  <h2>Contact</h2>
+  <p>Email : <a href="mailto:vous@example.com">vous@example.com</a></p>
+  <p>
+    <a href="https://github.com/votre-user">GitHub</a> ·
+    <a href="https://linkedin.com/in/votre-user">LinkedIn</a>
+  </p>
+  <p class="copyright">© <span class="year"></span> [Prénom Nom]</p>
+</footer>
+<script src="js/script.js"></script>
+
+</body>
+</html>

@@ -60,6 +60,17 @@ const translations = {
     'p4.link': 'Voir l\'étude de cas →',
 
 
+
+
+
+
+
+
+
+
+
+
+
   },
   en: {
         'hero.eyebrow': 'Data Scientist · Fraud Analysis Specialist · ML · NLP · MLOps',
@@ -120,6 +131,17 @@ const translations = {
     'p4.title': 'Interactive Sales Dashboard',
     'p4.desc': 'Streamlit application exploring e-commerce sales with RFM segmentation and dynamic visualizations.',
     'p4.link': 'View case study →',
+
+
+
+
+
+
+
+
+
+
+
 
 
   }

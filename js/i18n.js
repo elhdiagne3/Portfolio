@@ -1,6 +1,6 @@
 const translations = {
   fr: {
-        'hero.eyebrow': 'Data Scientist · ML · NLP · MLOps',
+        'hero.eyebrow': 'Data Scientist · Spécialiste Analyse de Fraude · ML · NLP · MLOps',
     'hero.name': 'Elhadji Diaraff DIAGNE',
     'hero.role': 'Je conçois, entraîne et déploie des systèmes de machine learning de bout en bout — de l\'ingestion de données brutes jusqu\'à l\'API en production.',
     'hero.cta.projects': 'Voir mes projets',
@@ -50,7 +50,7 @@ const translations = {
     'footer.rights': 'Tous droits réservés'
   },
   en: {
-        'hero.eyebrow': 'Data Scientist · ML · NLP · MLOps',
+        'hero.eyebrow': 'Data Scientist · Spécialiste Analyse de Fraude · ML · NLP · MLOps',
     'hero.name': 'Elhadji Diaraff DIAGNE',
     'hero.role': 'I design, train and deploy end-to-end machine learning systems — from raw data ingestion to production API.',
     'hero.cta.projects': 'View my projects',

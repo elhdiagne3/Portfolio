@@ -48,6 +48,9 @@ const translations = {
     'cv.preview.fr': 'Aperçu du CV français ↗',
     'footer.contact': 'Contact',
     'footer.rights': 'Tous droits réservés'
+    'water.title': 'Water Level Forecast',
+    'water.desc': 'Prediction du niveau d eau - analyse exploratoire, feature engineering et modelisation predictive.',
+    'water.link': 'Voir le notebook',
   },
   en: {
         'hero.eyebrow': 'Data Scientist · Fraud Analysis Specialist · ML · NLP · MLOps',
@@ -98,6 +101,9 @@ const translations = {
     'cv.preview.fr': 'Preview (English) ↗',
     'footer.contact': 'Contact',
     'footer.rights': 'All rights reserved'
+    'water.title': 'Water Level Forecast',
+    'water.desc': 'Water level prediction - exploratory analysis, feature engineering and predictive modeling.',
+    'water.link': 'View notebook',
   }
 };
 

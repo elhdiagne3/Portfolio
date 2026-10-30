@@ -51,6 +51,8 @@ const translations = {
     'p6.link': 'Voir les résultats →',
 
 
+
+
     'p5.title': 'Segmentation Clients E-commerce',
     'p5.desc': 'Segmentation RFM et clustering K-Means des clients e-commerce pour optimiser le ciblage marketing.',
     'p5.link': 'Voir les résultats →',
@@ -129,6 +131,8 @@ const translations = {
     'p6.title': 'Public Health',
     'p6.desc': 'Public health data analysis (2023): data processing, statistics and interactive visualizations.',
     'p6.link': 'View results →',
+
+
 
 
     'p5.title': 'E-commerce Customer Segmentation',

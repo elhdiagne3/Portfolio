@@ -20,12 +20,11 @@ const translations = {
     'skills.cloud': 'Cloud & Infra',
     'featured.title': 'Projets phares',
     'featured.all': 'Tous les projets →',
-    'proj1.title': 'Prédiction du churn client',
-    'proj1.desc': 'Modèle XGBoost pour anticiper la résiliation sur un dataset télécom (7k clients).',
-    'proj1.link': 'Voir l\'étude de cas →',
-    'proj2.title': 'Dashboard ventes interactif',
-    'proj2.desc': 'Application Streamlit explorant 3 ans de ventes e-commerce avec segmentation RFM.',
-    'proj2.link': 'Voir l\'étude de cas →',
+
+
+
+
+
     'nav.home': 'Accueil',
     'nav.projects': 'Projets',
     'nav.cv': 'CV',
@@ -40,17 +39,27 @@ const translations = {
     'index.skills': 'Compétences',
     'index.featured': 'Projets phares',
     'index.all_projects': 'Tous les projets →',
-    'projects.title': 'Projets',
-    'projects.intro': 'Une sélection de projets data — de l\u2019exploration au déploiement.',
+
     'cv.headline': 'Mon CV',
     'cv.intro': 'Choisissez la version à télécharger — le PDF s\u2019ouvre dans un nouvel onglet.',
     'cv.download': '⬇ Télécharger en français',
     'cv.preview.fr': 'Aperçu du CV français ↗',
     'footer.contact': 'Contact',
     'footer.rights': 'Tous droits réservés'
-    'water.title': 'Water Level Forecast',
-    'water.desc': 'Water level prediction — exploratory analysis, time series and interactive visualization.',
-    'water.link': 'View results →',
+    'p1.title': 'Water Level Forecast',
+    'p1.desc': 'Modélisation prédictive des niveaux d\'eau et visualisation interactive des séries temporelles hydrologiques.',
+    'p1.link': 'Voir les résultats →',
+    'p2.title': 'Analyse du système éducatif',
+    'p2.desc': 'Analyse exploratoire de données éducatives (2019-2022) : statistiques descriptives, tendances et visualisations.',
+    'p2.link': 'Voir le notebook →',
+    'p3.title': 'Prédiction du Churn Client',
+    'p3.desc': 'Développement d\'un modèle de machine learning pour anticiper la résiliation des clients et optimiser la rétention.',
+    'p3.link': 'Voir l\'étude de cas →',
+    'p4.title': 'Dashboard Ventes Interactif',
+    'p4.desc': 'Application Streamlit explorant les ventes e-commerce avec segmentation RFM et visualisations dynamiques.',
+    'p4.link': 'Voir l\'étude de cas →',
+
+
   },
   en: {
         'hero.eyebrow': 'Data Scientist · Fraud Analysis Specialist · ML · NLP · MLOps',
@@ -73,12 +82,11 @@ const translations = {
     'skills.cloud': 'Cloud & Infra',
     'featured.title': 'Featured Projects',
     'featured.all': 'All projects →',
-    'proj1.title': 'Customer Churn Prediction',
-    'proj1.desc': 'XGBoost model to anticipate churn on a telecom dataset (7k customers).',
-    'proj1.link': 'View case study →',
-    'proj2.title': 'Interactive Sales Dashboard',
-    'proj2.desc': 'Streamlit application exploring 3 years of e-commerce sales with RFM segmentation.',
-    'proj2.link': 'View case study →',
+
+
+
+
+
     'nav.home': 'Home',
     'nav.projects': 'Projects',
     'nav.cv': 'Resume',
@@ -93,17 +101,27 @@ const translations = {
     'index.skills': 'Skills',
     'index.featured': 'Featured projects',
     'index.all_projects': 'All projects →',
-    'projects.title': 'Projects',
-    'projects.intro': 'A selection of data projects — from exploration to deployment.',
+
     'cv.headline': 'My Resume',
     'cv.intro': 'Pick the version to download — the PDF opens in a new tab.',
     'cv.download': '⬇ Download (English)',
     'cv.preview.fr': 'Preview (English) ↗',
     'footer.contact': 'Contact',
     'footer.rights': 'All rights reserved'
-    'water.title': 'Water Level Forecast',
-    'water.desc': 'Water level prediction - exploratory analysis, feature engineering and predictive modeling.',
-    'water.link': 'View notebook',
+    'p1.title': 'Water Level Forecast',
+    'p1.desc': 'Predictive modeling of water levels and interactive visualization of hydrological time series.',
+    'p1.link': 'View results →',
+    'p2.title': 'Education System Analysis',
+    'p2.desc': 'Exploratory data analysis of education systems (2019-2022): descriptive statistics, trends, and visualizations.',
+    'p2.link': 'View notebook →',
+    'p3.title': 'Customer Churn Prediction',
+    'p3.desc': 'Machine learning model development to anticipate customer churn and optimize retention strategies.',
+    'p3.link': 'View case study →',
+    'p4.title': 'Interactive Sales Dashboard',
+    'p4.desc': 'Streamlit application exploring e-commerce sales with RFM segmentation and dynamic visualizations.',
+    'p4.link': 'View case study →',
+
+
   }
 };
 

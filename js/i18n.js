@@ -46,6 +46,9 @@ const translations = {
     'cv.preview.fr': 'Aperçu du CV français ↗',
     'footer.contact': 'Contact',
     'footer.rights': 'Tous droits réservés'
+    'p6.title': 'Santé Publique',
+    'p6.desc': 'Analyse de données de santé publique (2023) : traitement des données, statistiques et visualisations interactives.',
+    'p6.link': 'Voir les résultats →',
     'p5.title': 'Segmentation Clients E-commerce',
     'p5.desc': 'Segmentation RFM et clustering K-Means des clients e-commerce pour optimiser le ciblage marketing.',
     'p5.link': 'Voir les résultats →',
@@ -121,6 +124,9 @@ const translations = {
     'cv.preview.fr': 'Preview (English) ↗',
     'footer.contact': 'Contact',
     'footer.rights': 'All rights reserved'
+    'p6.title': 'Public Health',
+    'p6.desc': 'Public health data analysis (2023): data processing, statistics and interactive visualizations.',
+    'p6.link': 'View results →',
     'p5.title': 'E-commerce Customer Segmentation',
     'p5.desc': 'RFM segmentation and K-Means clustering of e-commerce customers to optimize marketing targeting.',
     'p5.link': 'View results →',

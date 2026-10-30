@@ -55,12 +55,11 @@ const translations = {
     'p2.title': 'Analyse du système éducatif',
     'p2.desc': 'Analyse exploratoire de données éducatives (2019-2022) : statistiques descriptives, tendances et visualisations.',
     'p2.link': 'Voir le notebook →',
-    'p3.title': 'Prédiction du Churn Client',
-    'p3.desc': 'Développement d\'un modèle de machine learning pour anticiper la résiliation des clients et optimiser la rétention.',
-    'p3.link': 'Voir l\'étude de cas →',
-    'p4.title': 'Dashboard Ventes Interactif',
-    'p4.desc': 'Application Streamlit explorant les ventes e-commerce avec segmentation RFM et visualisations dynamiques.',
-    'p4.link': 'Voir l\'étude de cas →',
+
+
+
+
+
 
 
 
@@ -131,12 +130,11 @@ const translations = {
     'p2.title': 'Education System Analysis',
     'p2.desc': 'Exploratory data analysis of education systems (2019-2022): descriptive statistics, trends, and visualizations.',
     'p2.link': 'View notebook →',
-    'p3.title': 'Customer Churn Prediction',
-    'p3.desc': 'Machine learning model development to anticipate customer churn and optimize retention strategies.',
-    'p3.link': 'View case study →',
-    'p4.title': 'Interactive Sales Dashboard',
-    'p4.desc': 'Streamlit application exploring e-commerce sales with RFM segmentation and dynamic visualizations.',
-    'p4.link': 'View case study →',
+
+
+
+
+
 
 
 

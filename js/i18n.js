@@ -54,7 +54,7 @@ const translations = {
     'p1.link': 'Voir les résultats →',
     'p2.title': 'Analyse du système éducatif',
     'p2.desc': 'Analyse exploratoire de données éducatives (2019-2022) : statistiques descriptives, tendances et visualisations.',
-    'p2.link': 'Voir le notebook →',
+    'p2.link': 'Voir le module →',
 
 
 
@@ -129,7 +129,7 @@ const translations = {
     'p1.link': 'View results →',
     'p2.title': 'Education System Analysis',
     'p2.desc': 'Exploratory data analysis of education systems (2019-2022): descriptive statistics, trends, and visualizations.',
-    'p2.link': 'View notebook →',
+    'p2.link': 'View module →',
 
 
 

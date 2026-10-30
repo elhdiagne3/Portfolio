@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Public Health Dashboard — application interactive de suivi des indicateurs de sante publique.">
   <title>Public Health Dashboard — Elhadji Diaraff DIAGNE</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -11,47 +10,34 @@
 <header class="site-header">
   <nav class="nav">
     <a href="../index.html" class="logo">Elhadji Diaraff DIAGNE</a>
-    <button class="menu-toggle" aria-label="Menu">☰</button>
     <ul class="nav-links">
-      <li><a href="../index.html" data-i18n="nav.home">Accueil</a></li>
-      <li><a href="../projects.html" data-i18n="nav.projects">Projets</a></li>
-      <li><a href="../cv.html" data-i18n="nav.cv">CV</a></li>
-      <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
-      <li><button id="theme-toggle" class="icon-btn" aria-label="Thème">🌙</button></li>
-      <li><button id="lang-toggle" class="icon-btn" aria-label="Switch language">EN</button></li>
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="../projects.html">Projets</a></li>
+      <li><a href="../cv.html">CV</a></li>
     </ul>
   </nav>
 </header>
+
 <main class="case-study">
   <div class="case-head">
-    <p class="eyebrow" data-i18n="ph.eyebrow">Application Data · Santé publique</p>
-    <h1 data-i18n="ph.title">Public Health Dashboard</h1>
-    <p class="stack" data-i18n="ph.stack">Python · Streamlit · Pandas · Plotly</p>
+    <p class="eyebrow">Data Science · Santé Publique</p>
+    <h1>Public Health Dashboard</h1>
+    <p class="stack">Python · Pandas · Matplotlib · Notebooks</p>
   </div>
+
   <section>
-    <h2 data-i18n="ph.context.title">Contexte</h2>
-    <p data-i18n="ph.context.body">Application interactive de suivi d'indicateurs de santé publique : exploration des tendances épidémiologiques, comparaison régionale, filtres dynamiques et visualisations temps réel.</p>
+    <h2>Présentation du projet</h2>
+    <p>Analyse interactive et exploration des données de santé publique. Le projet est divisé en deux phases d'analyse.</p>
+    
+    <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+      <a href="public-health/notebook1.html" class="btn">📓 Voir le Notebook 1</a>
+      <a href="public-health/notebook2.html" class="btn">📓 Voir le Notebook 2</a>
+    </div>
   </section>
-  <section>
-    <h2 data-i18n="ph.features.title">Fonctionnalités clés</h2>
-    <ul>
-      <li data-i18n="ph.f1">Tableau de bord filtrable (région, période, pathologie)</li>
-      <li data-i18n="ph.f2">Séries temporelles interactives (Plotly)</li>
-      <li data-i18n="ph.f3">Cartes choroplèthes de prévalence</li>
-    </ul>
-  </section>
-  <section class="links">
-    <!-- Si votre app est sur Streamlit Cloud, remplacez le lien ci-dessous -->
-    <a href="public-health/index.html" target="_blank" rel="noopener" class="btn" data-i18n="ph.open">Ouvrir l'application ↗</a>
-    <a href="../projects.html" class="btn btn-outline" data-i18n="ph.back">← Retour aux projets</a>
+
+  <section class="links" style="margin-top: 3rem;">
+    <a href="../projects.html" class="btn btn-outline">← Retour aux projets</a>
   </section>
 </main>
-<footer id="contact" class="site-footer">
-  <h2>Contact</h2>
-  <p>Email : <a href="mailto:diagnediaraff@yahoo.fr">diagnediaraff@yahoo.fr</a></p>
-  <p class="copyright">© <span class="year"></span> Elhadji Diaraff DIAGNE</p>
-</footer>
-<script src="../js/i18n.js"></script>
-<script src="../js/script.js"></script>
 </body>
 </html>

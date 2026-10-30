@@ -1,7 +1,7 @@
 const translations = {
   fr: {
         'hero.eyebrow': 'Data Scientist · ML · NLP · MLOps',
-    'hero.name': 'El Hadji Diagne',
+    'hero.name': 'Elhadji Diaraff DIAGNE',
     'hero.role': 'Je conçois, entraîne et déploie des systèmes de machine learning de bout en bout — de l\'ingestion de données brutes jusqu\'à l\'API en production.',
     'hero.cta.projects': 'Voir mes projets',
     'hero.cta.cv': 'Mon CV',
@@ -52,7 +52,7 @@ const translations = {
   },
   en: {
         'hero.eyebrow': 'Data Scientist · ML · NLP · MLOps',
-    'hero.name': 'El Hadji Diagne',
+    'hero.name': 'Elhadji Diaraff DIAGNE',
     'hero.role': 'I design, train and deploy end-to-end machine learning systems — from raw data ingestion to production API.',
     'hero.cta.projects': 'View my projects',
     'hero.cta.cv': 'My Resume',

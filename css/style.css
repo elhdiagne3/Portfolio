@@ -134,3 +134,110 @@ section { padding: 3rem 0; }
   .nav { position: relative; }
   .case-study { padding: 1rem 1rem 3rem; }
 }
+
+/* ============ HERO TECHNIQUE ============ */
+.hero-tech h1 {
+  font-size: 2.8rem;
+  letter-spacing: -0.02em;
+  margin-bottom: .4rem;
+}
+.hero-tech .hero-role {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 680px;
+  margin-bottom: 1.6rem;
+  line-height: 1.55;
+}
+
+.hero-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin: 1.2rem 0 2rem;
+  max-width: 720px;
+}
+.hero-stack .chip {
+  font-family: "SF Mono", "Consolas", "Menlo", monospace;
+  font-size: .78rem;
+  padding: .3rem .7rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  background: var(--card-bg);
+  transition: border-color .15s, color .15s;
+}
+.hero-stack .chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ============ RÉSUMÉ TECHNIQUE ============ */
+.summary {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border);
+}
+.summary-body {
+  max-width: 780px;
+}
+.summary-body p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+.summary-body strong {
+  font-weight: 600;
+  color: var(--text);
+  background: linear-gradient(transparent 60%, rgba(37, 99, 235, 0.12) 60%);
+  padding: 0 .1em;
+}
+[data-theme="dark"] .summary-body strong {
+  background: linear-gradient(transparent 60%, rgba(96, 165, 250, 0.18) 60%);
+}
+
+/* ============ SKILLS GRID ============ */
+.skills-detailed {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border);
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem 2rem;
+  margin-top: 1.5rem;
+}
+.skill-cat h3 {
+  font-size: .82rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--accent);
+  margin-bottom: .6rem;
+  font-weight: 700;
+}
+.skill-cat ul {
+  list-style: none;
+  padding: 0;
+}
+.skill-cat li {
+  font-size: .92rem;
+  color: var(--muted);
+  padding: .25rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+.skill-cat li:last-child { border-bottom: none; }
+.skill-cat li em {
+  font-style: normal;
+  font-size: .78rem;
+  color: var(--muted);
+  opacity: .75;
+}
+
+/* ============ MOBILE ============ */
+@media (max-width: 720px) {
+  .hero-tech h1 { font-size: 2rem; }
+  .hero-tech .hero-role { font-size: .98rem; }
+  .skills-grid { grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+}
+@media (max-width: 480px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}

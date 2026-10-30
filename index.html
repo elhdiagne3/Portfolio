@@ -3,82 +3,214 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio de Elhadji Diaraff DIAGNE, Data Scientist.">
-  <title>Elhadji Diaraff DIAGNE — Data Scientist</title>
+  <meta name="description" content="El Hadji Diagne — Data Scientist. ML, NLP, MLOps, Data Engineering.">
+  <title>El Hadji Diagne — Data Scientist</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="site-header">
   <nav class="nav">
-    <a href="index.html" class="logo">Elhadji Diaraff DIAGNE</a>
+    <a href="index.html" class="logo">El Hadji Diagne</a>
     <button class="menu-toggle" aria-label="Menu">☰</button>
     <ul class="nav-links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="projects.html">Projets</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-      <li><button id="theme-toggle" class="icon-btn" aria-label="Thème">🌙</button>
-        <li><button id="lang-toggle" class="icon-btn" aria-label="Switch language">EN</button></li></li>
+      <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="projects.html" data-i18n="nav.projects">Projets</a></li>
+      <li><a href="cv.html" data-i18n="nav.cv">CV</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      <li><button id="theme-toggle" class="icon-btn" aria-label="Thème">🌙</button></li>
+      <li><button id="lang-toggle" class="icon-btn" aria-label="Switch language">EN</button></li>
     </ul>
   </nav>
 </header>
 
 <main>
-  <section class="hero">
-    <p class="eyebrow">Data Scientist</p>
-    <h1>Je transforme les données<br>en décisions concrètes.</h1>
-    <p class="intro">
-      [Une à deux phrases : votre parcours, vos spécialités — ML, NLP,
-      dataviz, MLOps — et ce qui vous anime.]
+
+  <!-- ============ HERO ============ -->
+  <section class="hero hero-tech">
+    <p class="eyebrow" data-i18n="hero.eyebrow">Data Scientist · ML · NLP · MLOps</p>
+    <h1 data-i18n="hero.name">El Hadji Diagne</h1>
+    <p class="hero-role" data-i18n="hero.role">
+      Je conçois, entraîne et déploie des systèmes de machine learning de bout en bout — de l'ingestion
+      de données brutes jusqu'à l'API en production.
     </p>
+
+    <div class="hero-stack">
+      <span class="chip">Python</span>
+      <span class="chip">scikit-learn</span>
+      <span class="chip">XGBoost</span>
+      <span class="chip">TensorFlow</span>
+      <span class="chip">PyTorch</span>
+      <span class="chip">Hugging Face</span>
+      <span class="chip">spaCy</span>
+      <span class="chip">MLflow</span>
+      <span class="chip">Docker</span>
+      <span class="chip">FastAPI</span>
+      <span class="chip">PostgreSQL</span>
+      <span class="chip">Airflow</span>
+      <span class="chip">Streamlit</span>
+      <span class="chip">Plotly</span>
+    </div>
+
     <div class="cta">
-      <a href="projects.html" class="btn">Voir mes projets</a>
-      <a href="cv.html" class="btn btn-outline">Mon CV</a>
+      <a href="projects.html" class="btn" data-i18n="hero.cta.projects">Voir mes projets</a>
+      <a href="cv.html" class="btn btn-outline" data-i18n="hero.cta.cv">Mon CV</a>
     </div>
   </section>
 
-  <section class="skills">
-    <h2>Compétences</h2>
-    <ul class="skill-list">
-      <li>Python</li><li>SQL</li><li>Pandas</li><li>scikit-learn</li>
-      <li>TensorFlow</li><li>MLflow</li><li>Docker</li><li>Streamlit</li>
-    </ul>
+  <!-- ============ RÉSUMÉ TECHNIQUE ============ -->
+  <section class="summary">
+    <h2 data-i18n="summary.title">Résumé technique</h2>
+    <div class="summary-body">
+      <p data-i18n="summary.p1">
+        Data Scientist orienté production, spécialisé en <strong>machine learning supervisé</strong>,
+        <strong>traitement du langage (NLP)</strong> et <strong>déploiement de modèles en production</strong>.
+        Expérience end-to-end : exploration de données volumineuses, feature engineering, entraînement
+        et évaluation de modèles, monitoring post-déploiement.
+      </p>
+      <p data-i18n="summary.p2">
+        Maîtrise de <strong>Python</strong> (Pandas, NumPy, scikit-learn, PyTorch) et <strong>SQL</strong>
+        (PostgreSQL, BigQuery). Pratique quotidienne de <strong>Docker</strong>, <strong>MLflow</strong>,
+        <strong>FastAPI</strong> et <strong>Git</strong> pour industrialiser les pipelines. Sensibilité
+        aux contraintes métier : coût d'erreur, latence, interprétabilité.
+      </p>
+      <p data-i18n="summary.p3">
+        Intérêt marqué pour les modèles parcimonieux, les <strong>architectures reproductibles</strong>
+        et les workflows MLOps (CI/CD, versionnement de données, tests de modèles).
+      </p>
+    </div>
   </section>
 
+  <!-- ============ COMPÉTENCES PAR CATÉGORIE ============ -->
+  <section class="skills-detailed">
+    <h2 data-i18n="skills.title">Stack technique</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-cat">
+        <h3 data-i18n="skills.languages">Langages</h3>
+        <ul>
+          <li>Python <em>(avancé)</em></li>
+          <li>SQL <em>(avancé)</em></li>
+          <li>R</li>
+          <li>Bash</li>
+          <li>JavaScript</li>
+        </ul>
+      </div>
+
+      <div class="skill-cat">
+        <h3 data-i18n="skills.ml">Machine Learning & Deep Learning</h3>
+        <ul>
+          <li>scikit-learn</li>
+          <li>XGBoost / LightGBM</li>
+          <li>TensorFlow / Keras</li>
+          <li>PyTorch</li>
+          <li>Optuna <em>(hyperparameter tuning)</em></li>
+        </ul>
+      </div>
+
+      <div class="skill-cat">
+        <h3 data-i18n="skills.nlp">NLP & LLMs</h3>
+        <ul>
+          <li>Hugging Face Transformers</li>
+          <li>spaCy</li>
+          <li>NLTK</li>
+          <li>LangChain</li>
+          <li>Embeddings & RAG</li>
+        </ul>
+      </div>
+
+      <div class="skill-cat">
+        <h3 data-i18n="skills.data">Data Engineering</h3>
+        <ul>
+          <li>Pandas / Polars</li>
+          <li>NumPy</li>
+          <li>PySpark</li>
+          <li>Airflow</li>
+          <li>dbt</li>
+        </ul>
+      </div>
+
+      <div class="skill-cat">
+        <h3 data-i18n="skills.mlops">MLOps & Déploiement</h3>
+        <ul>
+          <li>MLflow</li>
+          <li>Docker</li>
+          <li>FastAPI</li>
+          <li>DVC</li>
+          <li>Git / GitHub Actions</li>
+        </ul>
+      </div>
+
+      <div class="skill-cat">
+        <h3 data-i18n="skills.viz">Visualisation & BI</h3>
+        <ul>
+          <li>Matplotlib / Seaborn</li>
+          <li>Plotly</li>
+          <li>Streamlit</li>
+          <li>Power BI</li>
+          <li>Tableau</li>
+        </ul>
+      </div>
+
+      <div class="skill-cat">
+        <h3 data-i18n="skills.db">Bases de données</h3>
+        <ul>
+          <li>PostgreSQL</li>
+          <li>MongoDB</li>
+          <li>BigQuery</li>
+          <li>SQLite</li>
+        </ul>
+      </div>
+
+      <div class="skill-cat">
+        <h3 data-i18n="skills.cloud">Cloud & Infra</h3>
+        <ul>
+          <li>Google Cloud Platform</li>
+          <li>AWS <em>(S3, EC2, SageMaker)</em></li>
+          <li>Linux</li>
+          <li>Nginx</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ PROJETS PHARES ============ -->
   <section class="featured-projects">
     <div class="section-head">
-      <h2>Projets phares</h2>
-      <a href="projects.html" class="link-arrow">Tous les projets →</a>
+      <h2 data-i18n="featured.title">Projets phares</h2>
+      <a href="projects.html" class="link-arrow" data-i18n="featured.all">Tous les projets →</a>
     </div>
     <div class="project-grid">
       <article class="project-card">
-        <h3>Prédiction du churn client</h3>
-        <p>Modèle XGBoost pour anticiper la résiliation sur un dataset télécom (7k clients).</p>
+        <h3 data-i18n="proj1.title">Prédiction du churn client</h3>
+        <p data-i18n="proj1.desc">Modèle XGBoost pour anticiper la résiliation sur un dataset télécom (7k clients).</p>
         <p class="stack">Python · scikit-learn · MLflow</p>
-        <a href="projects/projet-1.html">Voir l'étude de cas →</a>
+        <a href="projects/projet-1.html" data-i18n="proj1.link">Voir l'étude de cas →</a>
       </article>
       <article class="project-card">
-        <h3>Dashboard ventes interactif</h3>
-        <p>Application Streamlit explorant 3 ans de ventes e-commerce avec segmentation RFM.</p>
+        <h3 data-i18n="proj2.title">Dashboard ventes interactif</h3>
+        <p data-i18n="proj2.desc">Application Streamlit explorant 3 ans de ventes e-commerce avec segmentation RFM.</p>
         <p class="stack">Streamlit · Plotly · Pandas</p>
-        <a href="projects/projet-2.html">Voir l'étude de cas →</a>
+        <a href="projects/projet-2.html" data-i18n="proj2.link">Voir l'étude de cas →</a>
       </article>
     </div>
   </section>
+
 </main>
 
 <footer id="contact" class="site-footer">
-  <h2>Contact</h2>
+  <h2 data-i18n="footer.contact">Contact</h2>
   <p>Email : <a href="mailto:diagnediaraff@yahoo.fr">diagnediaraff@yahoo.fr</a></p>
   <p>
     <a href="https://github.com/elhdiagne3">GitHub</a> ·
     <a href="https://linkedin.com/in/elhdiagne3">LinkedIn</a>
   </p>
-  <p class="copyright">© <span class="year"></span> Elhadji Diaraff DIAGNE</p>
+  <p class="copyright">© <span class="year"></span> El Hadji Diagne</p>
 </footer>
-<script src="js/i18n.js"></script>
-  <script src="js/script.js"></script>
 
+<script src="js/i18n.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

@@ -46,6 +46,9 @@ const translations = {
     'cv.preview.fr': 'Aperçu du CV français ↗',
     'footer.contact': 'Contact',
     'footer.rights': 'Tous droits réservés'
+    'p5.title': 'Segmentation Clients E-commerce',
+    'p5.desc': 'Segmentation RFM et clustering K-Means des clients e-commerce pour optimiser le ciblage marketing.',
+    'p5.link': 'Voir les résultats →',
     'p1.title': 'Water Level Forecast',
     'p1.desc': 'Modélisation prédictive des niveaux d\'eau et visualisation interactive des séries temporelles hydrologiques.',
     'p1.link': 'Voir les résultats →',
@@ -119,6 +122,9 @@ const translations = {
     'cv.preview.fr': 'Preview (English) ↗',
     'footer.contact': 'Contact',
     'footer.rights': 'All rights reserved'
+    'p5.title': 'E-commerce Customer Segmentation',
+    'p5.desc': 'RFM segmentation and K-Means clustering of e-commerce customers to optimize marketing targeting.',
+    'p5.link': 'View results →',
     'p1.title': 'Water Level Forecast',
     'p1.desc': 'Predictive modeling of water levels and interactive visualization of hydrological time series.',
     'p1.link': 'View results →',

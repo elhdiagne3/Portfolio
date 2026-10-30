@@ -49,8 +49,8 @@ const translations = {
     'footer.contact': 'Contact',
     'footer.rights': 'Tous droits réservés'
     'water.title': 'Water Level Forecast',
-    'water.desc': 'Prediction du niveau d eau - analyse exploratoire, feature engineering et modelisation predictive.',
-    'water.link': 'Voir le notebook',
+    'water.desc': 'Water level prediction — exploratory analysis, time series and interactive visualization.',
+    'water.link': 'View results →',
   },
   en: {
         'hero.eyebrow': 'Data Scientist · Fraud Analysis Specialist · ML · NLP · MLOps',

@@ -23,3 +23,9 @@ if (themeToggle) {
 document.querySelectorAll('.year').forEach(el => {
   el.textContent = new Date().getFullYear();
 });
+// Met à jour le lien du bouton "Télécharger CV" selon la langue
+function updateCVDownload(lang) {
+  const link = document.getElementById('cv-download');
+  if (!link) return;
+  link.href = lang === 'en' ? 'cv-en.pdf' : 'cv-fr.pdf';
+}

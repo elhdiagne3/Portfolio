@@ -1,0 +1,103 @@
+Elhadji Diaraff DIAGNE
+Senior Data Scientist
+?phone+223 76 29 98 69|/envel?pediagnediara@yahoo.fr|/gl?beelhdiagne3.github.io/Portfolio|??ap-?arker-altBamako, Mali
+R? esum? e professionnel
+Data Scientist avec plus de 6 ans d?exp? erience en science des donn? ees, machine learning, d? etection de la fraude, Business Intelligence
+(BI) et analyse de donn? ees ` a grande ? echelle dans des environnements Cloud tels que JupyterHub, SAS Viya et Databricks. Expert
+confirm? e dans la conception, le d? eveloppement et le d? eploiement de cas d?usage ` a forte valeur ajout? ee, permettant d?am? eliorer la
+performance op? erationnelle, d?orienter les d? ecisions strat? egiques et de soutenir la transformation des organisations ` a travers les
+donn? ees.
+Comp? etences techniques
+?Langages :Python, PySpark, SQL, SAS (Studio & Analytics), R, Bash
+?Machine Learning & Deep Learning :Scikit-Learn, TensorFlow, PyTorch, Keras, XGBoost, Hugging Face
+?IA G? en? erative & LLM :OpenAI API, LangChain, RAG, Prompt Engineering
+?Manipulation & Extraction :Pandas, NumPy, Scrapy, BeautifulSoup
+?Ing? enierie de Donn? ees & ETL/ELT :Apache Airflow, Google Dataflow, dbt, Apache Spark
+?Data Warehousing & Cloud :Google BigQuery, Databricks, Cloudera, Snowflake, GCP
+?Visualisation & Web :Power BI, SAS Visual Analytics, D3.js, Chart.js, Streamlit, FastAPI
+?MLOps, DevOps & Outils :Git, Docker, CI/CD, MLflow
+Exp? erience professionnelle
+Data Scientist Nov. 2020 ? Pr? esent
+Orange-Mali Bamako, Mali
+?Cas d?usage Fraude & Revenu Assurance :Conception et d? eploiement de solutions d?analyse pr? edictive et de tableaux de
+bord d? ecisionnels sur des volumes massifs de donn? ees t? el? ecom (SAS Viya, Python, PySpark, SQL, Power BI), optimisant la
+d? etection de la fraude et la pr? eservation du chiffre d?affaires.
+?D? eveloppement d?une plate-forme Web & IA (FastAPI, PySpark, Hive) :Conception d?une application d?entreprise
+multi-modules connect? ee ` a Hive via PySpark, s? ecuris? ee par gestion des acc` es :
+?Suivi de l?activit? e :Formulaire dynamique et KPI interactifs pour le pilotage des d? eploiements et du niveau d?automatisation
+des projets.
+?Fast-Profiling Client :Module d?analyse instantan? ee du comportement client bas? e sur les usages Voix, SMS et Data.
+?Monitoring Fraude :Int? egration de dashboards d? ecisionnels dynamiques d? edi? es ` a la surveillance des anomalies r? eseau.
+?Ordonnancement & MLOps :Interface d?automatisation et de planification d?ex? ecution des scripts & mod` eles ML (.py,
+.ipynb, .sh) offrant une autonomie totale aux utilisateurs.
+?Assistant IA / GenAI (RAG) :D? eploiement d?une solution RAG sur les donn? ees agr? eg? ees, permettant la requ? ete en langage
+naturel des KPI m? etiers et acc? el? erant la prise de d? ecision.
+?Social Media & Scraping Web :D? eveloppement d?une solution d?extraction automatis? ee (Facebook-Scraper, Streamlit)
+pour l?analyse comportementale et la ma? ?trise des diff? erents modes op? eratoires des fraudeurs sur les services Data mobiles.
+?Mod? elisation Pr? edictive Machine Learning :Conception, entra? ?nement et mise en production d?un mod` eleXGBoostd? edi? e
+` a la d? etection proactive de la fraude Simbox sur notre r? eseau t? el? ecom.
+Data Analyst Ao? ut 2020 ? Nov. 2020
+Centre de services scolaire de Montr? eal (CSDM) Montr? eal, Canada
+?Pilotage des KPI de r? eussite scolaire :Traitement, analyse approfondie et mod? elisation de donn? ees d?apprentissage afin de
+fournir aux conseillers scolaires des indicateurs cl? es et des rapports d? ecisionnels de haute qualit? e.
+Page 1 sur 3
+?Collecte & Digitalisation des donn? ees :Conception et impl? ementation d?applications web de collecte de donn? ees en ligne
+pour optimiser la centralisation et la fiabilit? e des informations.
+D? eveloppeur en IA Mars 2020 ? Juil. 2020
+Innovation Maritime Rimouski, Canada
+?Ing? enierie de donn? ees & ETL :Conception du pipeline d?extraction et de traitement (ETL) des donn? ees maritimes h? eberg? ees
+sur SQL Server via le framework RODBC de R, dans le cadre du projet de pr? evision du niveau de la mer pour la navigation
+s? ecuris? ee (stations Vieux-Qu? ebec, Saint-Fran? cois et Saint-Joseph).
+?Mod? elisation pr? edictive Machine Learning :?Evaluation comparative de plusieurs architectures de s? eries temporelles
+(ARIMA, Prophet, LSTM) et mise en production du mod` ele ARIMA r? ecurren? cant des pr? edictions toutes les 3 minutes.
+?Automatisation & Monitoring :Automatisation du flux d?exportation des pr? edictions vers OneDrive et d? eveloppement d?un
+syst` eme de suivi dynamique en temps r? eel (Dygraphs / R) pour l?analyse des ? ecarts entre valeurs pr? edites et observ? ees.
+Assistant de recherche & d?enseignementMai 2018 ? Sept. 2019
+UQTR ? D? epartement de math? ematiques et d?informatique Trois-Rivi` eres, Canada
+?Recherche Appliqu? ee :Travaux comparatifs entre m? ethodes classiques (Analyse Discriminante, R? egression) et algorithmes
+r? ecents (Machine Learning, Perceptron Multicouche) pour la classification supervis? ee.
+?Encadrement P? edagogique :Formation, suivi et assistance des ? etudiants de premier cycle en probabilit? es et statistique.
+Statisticien, Responsable r? egional (RGE)F? ev. 2016 ? Jan. 2018
+Agence nationale de la statistique et de la d? emographie (ANSD) Dakar, S? en? egal
+?Supervision Terrain :Formation et encadrement de 15 ? equipes d?enqu? eteurs et de superviseurs r? egionaux (Diourbel et Louga)
+pour garantir l?int? egrit? e et la qualit? e de la collecte microd? emographique.
+?Traitement & Reporting :Gestion, apurement et analyse approfondie des donn? ees collect? ees, suivis de la r? edaction de rapports
+analytiques strat? egiques pour les d? ecideurs.
+Projets & R? ealisations
+Assistant IA & GenAI Tabulaire|Python, LLM, RAG, LangChain
+?Membre de l?? equipe Wiito (Trois Data Scientists) :D? eveloppement et d? eploiement d?une solution bas? ee sur les
+architectures LLM / RAG d? edi? ee ` a l?automatisation de l?analyse et de l?interrogation de donn? ees tabulaires complexes.
+Plate-forme FASTProfiler|FastAPI, SAS Viya, SQL, G? eolocalisation
+?Profilage rapide du Client :Conception d?une plateforme d?analyse dynamique fournissant un r? esum? e synth? etique du
+comportement client et de ses informations d?identification sur une p? eriode donn? ee (profilage des usages Voix, SMS, Data,
+souscriptions de forfaits et g? eolocalisation). L?outil permet de d? eterminer en temps record si un client suspect pr? esente le profil
+d?un fraudeur.
+Mod? elisation du Churn Client|PySpark, Azure Databricks, Big Data
+?Analyse d?Attrition :D? eploiement d?un pipeline de Machine Learning sur des volumes massifs de donn? ees t? el? ecom afin
+d?analyser, pr? edire et anticiper le taux de r? esiliation (Churn) des clients.
+Pr? evision Hydrographique S? eries Temporelles|Python, XGBoost, Machine Learning
+?Pr? ediction des Niveaux d?Eau :D? eveloppement et calibration d?un mod` ele Machine Learning XGBoost pour la pr? evision
+pr? edictive des niveaux de la mer au niveau de stations de surveillance au Qu? ebec.
+Industrialisation de Cas d?Usage Fraude Telco|SAS Viya, PySpark, SQL, Python
+?Fraud Detection & Revenue Assurance :D? eploiement strat? egique de plus de 30 cas d?usage de d? etection et de pr? ediction de
+la fraude t? el? ecom sur le r? eseau d?Orange Mali.
+Threat Intelligence & Scraping Social Media|Python, Web Scraping, NLP
+?Analyse des Avis & Modus Operandi :Conception de scripts d?extraction automatis? ee (Google, Facebook, YouTube) pour
+analyser la perception des internautes et collecter des donn? ees sur les techniques de fraude au forfait Data mobile.
+Dipl? omes & Formations
+Ma? ?trise en math? ematiques et informatique appliqu? eesJan. 2018 ? Sept. 2019
+Universit? e du Qu? ebec ` a Trois-Rivi` eres (UQTR) Qu? ebec, Canada
+?M? emoire de recherche :Analyse discriminante et perceptron multicouche : liens formels et applications. [M? emoire Sept. 2019]
+Licence en statistique appliqu? ee et informatiqueNov. 2016 ? Ao? ut 2017
+Institut d?? etudes et de formation en statistique, gestion (INEFSAGEP) Dakar, S? en? egal
+Technicien sup? erieur en statistiqueOct. 2013 ? Juil. 2015
+?Ecole nationale de la statistique et de l?analyse ? economique (ENSAE) Dakar, S? en? egal
+Page 2 sur 3
+Certifications
+?Science des donn? ees dans Azure Databricks[En cours]
+?Machine Learning avec PySpark dans Azure DatabricksCoursera [2026]
+?Python pour la Science des donn? ees IBM [2020]
+Langues & Centres d?int? er? et
+?Langues :Fran? cais (Courant / Professionnel), Anglais (Interm? ediaire), Arabe (Interm? ediaire)
+?Centres d?int? er? et :Football, Lecture, Voyages
+Page 3 sur 3

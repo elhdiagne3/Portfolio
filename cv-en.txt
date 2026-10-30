@@ -1,0 +1,97 @@
+Elhadji Diaraff DIAGNE
+Senior Data Scientist
+♂phone+223 76 29 98 69|/envel⌢pediagnediara@yahoo.fr|/gl⌢beelhdiagne3.github.io/Portfolio|♂¶ap-¶arker-altBamako, Mali
+Professional Summary
+Data Scientist with over 6 years of experience in data science, machine learning, fraud detection, Business Intelligence (BI), and
+large-scale data analysis across Cloud environments such as JupyterHub, SAS Viya, and Databricks. Proven expertise in designing,
+developing, and deploying high-value use cases to improve operational performance, drive strategic decision-making, and support
+organizational digital transformation.
+Technical Skills
+•Languages:Python, PySpark, SQL, SAS (Studio & Analytics), R, Bash
+•Machine Learning & Deep Learning:Scikit-Learn, TensorFlow, PyTorch, Keras, XGBoost, Hugging Face
+•Generative AI & LLM:OpenAI API, LangChain, RAG, Prompt Engineering
+•Data Wrangling & Scraping:Pandas, NumPy, Scrapy, BeautifulSoup
+•Data Engineering & ETL/ELT:Apache Airflow, Google Dataflow, dbt, Apache Spark
+•Data Warehousing & Cloud:Google BigQuery, Databricks, Cloudera, Snowflake, GCP
+•Visualization & Web:Power BI, SAS Visual Analytics, D3.js, Chart.js, Streamlit, FastAPI
+•MLOps, DevOps & Tools:Git, Docker, CI/CD, MLflow
+Work Experience
+Data Scientist Nov. 2020 – Present
+Orange Mali Bamako, Mali
+•Fraud & Revenue Assurance Use Cases:Designed and deployed predictive analytics solutions and executive dashboards on
+massive telecom data volumes (SAS Viya, Python, PySpark, SQL, Power BI), optimizing fraud detection and revenue
+preservation.
+•Web & AI Platform Development (FastAPI, PySpark, Hive):Engineered a multi-module enterprise web application
+connected to Hive via PySpark with role-based access control:
+◦Activity Tracking:Dynamic forms and interactive KPIs to track project deployments and automation levels.
+◦Fast Client Profiling:Instant customer behavior analysis module based on Voice, SMS, and Data usage patterns.
+◦Fraud Monitoring:Integrated real-time decision dashboards dedicated to network anomaly surveillance.
+◦Scheduling & MLOps:Script and ML model execution pipeline interface (.py, .ipynb, .sh) providing full user autonomy.
+◦AI Assistant / GenAI (RAG):Deployed a RAG solution over aggregated data, enabling natural language querying of
+business KPIs to accelerate decision-making.
+•Social Media & Web Scraping:Built an automated web extraction pipeline (Facebook-Scraper, Streamlit) for behavioral
+analysis and reverse-engineering of fraudsters’ operational methods on mobile Data services.
+•Predictive Machine Learning Modeling:Trained, evaluated, and deployed anXGBoostmodel for proactive Simbox fraud
+detection on the telecom network.
+Data Analyst Aug. 2020 – Nov. 2020
+Centre de services scolaire de Montr´ eal (CSDM) Montreal, Canada
+Page 1 of 3
+•Academic Success KPI Tracking:Processed, analyzed, and modeled student learning data to provide school advisors with
+actionable insights and high-quality reporting dashboards.
+•Data Collection & Digitalization:Built web applications for online data collection to improve data centralization and
+accuracy.
+AI Developer Mar. 2020 – Jul. 2020
+Innovation Maritime Rimouski, Canada
+•Data Engineering & ETL:Built an ETL data pipeline for maritime data hosted on SQL Server using R’s RODBC framework
+for sea level prediction models across Vieux-Qu´ ebec, Saint-Fran¸ cois, and Saint-Joseph stations.
+•Predictive Time-Series Modeling:Evaluated time-series architectures (ARIMA, Prophet, LSTM) and deployed an ARIMA
+model executing sea level predictions every 3 minutes.
+•Automation & Monitoring:Automated export flows to OneDrive and developed a dynamic real-time monitoring system
+(Dygraphs / R) to track discrepancies between predicted and observed values.
+Research & Teaching AssistantMay 2018 – Sep. 2019
+UQTR – Department of Mathematics and Computer Science Trois-Rivi` eres, Canada
+•Applied Research:Conducted comparative research between traditional statistical methods (Discriminant Analysis,
+Regression) and modern algorithms (Machine Learning, Multilayer Perceptron) for supervised classification.
+•Teaching & Academic Support:Mentored and assisted undergraduate students in probability and statistics courses.
+Statistician, Regional Lead (RGE)Feb. 2016 – Jan. 2018
+National Agency for Statistics and Demography (ANSD) Dakar, Senegal
+•Field Operations Supervision:Trained and managed 15 field teams and regional supervisors across Diourbel and Louga
+regions to ensure high data quality during the general business census.
+•Data Processing & Reporting:Cleansed, managed, and analyzed collected census data, producing analytical reports for
+decision-makers.
+Projects & Achievements
+AI Assistant & Tabular GenAI|Python, LLM, RAG, LangChain
+•Wiito Team Member (3 Data Scientists):Developed and deployed a LLM / RAG solution designed to automate the
+analysis and natural language querying of complex tabular datasets.
+FASTProfiler Platform|FastAPI, SAS Viya, SQL, Geolocation
+•Fast Customer Profiling:Designed a dynamic analytics platform providing summary insights into customer behavior and
+identity attributes (Voice, SMS, Data usage, plan subscriptions, geolocation) to rapidly identify fraud profiles.
+Customer Churn Modeling|PySpark, Azure Databricks, Big Data
+•Attrition Analysis:Deployed a Machine Learning pipeline on large-scale telecom datasets to predict, analyze, and mitigate
+customer churn rates.
+Hydrographic Time-Series Forecasting|Python, XGBoost, Machine Learning
+•Water Level Prediction:Developed and calibrated an XGBoost Machine Learning model for predictive sea level forecasting
+across monitoring stations in Quebec.
+Telecom Fraud Use Cases Industrialization|SAS Viya, PySpark, SQL, Python
+•Fraud Detection & Revenue Assurance:Deployed over 30 telecom fraud detection and prediction use cases across Orange
+Mali’s network.
+Threat Intelligence & Social Media Scraping|Python, Web Scraping, NLP
+•Modus Operandi Analysis:Engineered automated web scrapers (Google, Facebook, YouTube) to gather public sentiment and
+analyze emerging mobile Data fraud techniques.
+Page 2 of 3
+Education
+Master’s Degree in Applied Mathematics and Computer ScienceJan. 2018 – Sep. 2019
+Universit´ e du Qu´ ebec ` a Trois-Rivi` eres (UQTR) Quebec, Canada
+•Research Thesis:Discriminant Analysis and Multilayer Perceptron: formal links and applications. [Thesis Sep. 2019]
+Bachelor’s Degree in Applied Statistics and Computer ScienceNov. 2016 – Aug. 2017
+INEFSAGEP Dakar, Senegal
+Associate Degree in Statistics (Technicien Sup´ erieur)Oct. 2013 – Jul. 2015
+National School for Statistics and Economic Analysis (ENSAE) Dakar, Senegal
+Certifications
+•Data Science in Azure Databricks [In Progress]
+•Machine Learning with PySpark in Azure DatabricksCoursera [2026]
+•Python for Data Science IBM [2020]
+Languages & Interests
+•Languages:French (Fluent / Native), English (Intermediate), Arabic (Intermediate)
+•Interests:Soccer, Reading, Traveling
+Page 3 of 3

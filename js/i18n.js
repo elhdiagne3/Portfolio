@@ -46,12 +46,11 @@ const translations = {
     'cv.preview.fr': 'Aperçu du CV français ↗',
     'footer.contact': 'Contact',
     'footer.rights': 'Tous droits réservés'
-    'p7.title': 'Application Santé Publique',
-    'p7.desc': 'Conception d\'une application d\'aide à la décision basée sur l\'analyse et le nettoyage de données de santé publique.',
-    'p7.link': 'Voir les résultats →',
-    'p6.title': 'Santé Publique',
-    'p6.desc': 'Analyse de données de santé publique (2023) : traitement des données, statistiques et visualisations interactives.',
-    'p6.link': 'Voir les résultats →',
+
+
+
+
+
 
 
 
@@ -131,12 +130,11 @@ const translations = {
     'cv.preview.fr': 'Preview (English) ↗',
     'footer.contact': 'Contact',
     'footer.rights': 'All rights reserved'
-    'p7.title': 'Public Health Application',
-    'p7.desc': 'Design of a decision-support application based on data cleaning and analysis of public health data.',
-    'p7.link': 'View results →',
-    'p6.title': 'Public Health',
-    'p6.desc': 'Public health data analysis (2023): data processing, statistics and interactive visualizations.',
-    'p6.link': 'View results →',
+
+
+
+
+
 
 
 

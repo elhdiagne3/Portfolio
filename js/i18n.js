@@ -215,3 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('lang-toggle');
   if (btn) btn.addEventListener('click', toggleLang);
 });
+
+
+// Export global pour i18n-global-portfolio
+if (typeof i18n !== 'undefined') { window.i18n = i18n; }

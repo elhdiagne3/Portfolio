@@ -46,6 +46,48 @@ nav .lang-toggle,
     color: inherit !important;
 }
 </style>
+<style id="lang-grey-fix">
+/* Icone langue : meme couleur que Contact (grise) */
+.lang-toggle,
+.lang-switcher,
+#langToggle,
+#lang-switcher,
+.language-selector,
+button[aria-label*="lang" i],
+button[title*="lang" i],
+.lang-toggle svg,
+.lang-switcher svg {
+    color: #9ca3af !important;
+    stroke: #9ca3af !important;
+    fill: none !important;
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 9999 !important;
+    position: relative !important;
+    pointer-events: auto !important;
+    transition: color 0.2s ease, stroke 0.2s ease;
+}
+.lang-toggle:hover,
+.lang-switcher:hover,
+#langToggle:hover,
+#lang-switcher:hover,
+.language-selector:hover,
+.lang-toggle:hover svg,
+.lang-switcher:hover svg {
+    color: #e5e7eb !important;
+    stroke: #e5e7eb !important;
+}
+/* Aligner verticalement avec le bouton Contact */
+header .lang-toggle,
+nav .lang-toggle,
+.navbar .lang-toggle,
+header .lang-switcher,
+nav .lang-switcher {
+    vertical-align: middle !important;
+    margin-left: 0.5rem;
+}
+</style>
 </head>
 <body>
 
@@ -118,5 +160,115 @@ nav .lang-toggle,
 </footer>
 <script src="js/script.js"></script>
 
+<script id="i18n-global-portfolio">
+(function() {
+    'use strict';
+
+    // Cle de stockage
+    var LANG_KEY = 'portfolio-lang';
+
+    // Recuperer la langue sauvee, sinon FR par defaut
+    function getSavedLang() {
+        try {
+            return localStorage.getItem(LANG_KEY) || 'fr';
+        } catch(e) {
+            return 'fr';
+        }
+    }
+
+    // Appliquer la langue a TOUT le document
+    function applyLang(lang) {
+        // 1. Attribut global
+        document.documentElement.setAttribute('lang', lang);
+        document.body && document.body.setAttribute('data-lang', lang);
+
+        // 2. Traduire tous les elements [data-i18n]
+        var nodes = document.querySelectorAll('[data-i18n]');
+        for (var i = 0; i < nodes.length; i++) {
+            var key = nodes[i].getAttribute('data-i18n');
+            if (window.i18n && window.i18n[lang] && window.i18n[lang][key] !== undefined) {
+                var val = window.i18n[lang][key];
+                if (nodes[i].tagName === 'INPUT' || nodes[i].tagName === 'TEXTAREA') {
+                    nodes[i].placeholder = val;
+                } else if (nodes[i].tagName === 'IMG') {
+                    nodes[i].alt = val;
+                } else {
+                    nodes[i].textContent = val;
+                }
+            }
+        }
+
+        // 3. Traduire les attributs [data-i18n-placeholder], [data-i18n-title], [data-i18n-aria]
+        var attrMap = {
+            'data-i18n-placeholder': 'placeholder',
+            'data-i18n-title': 'title',
+            'data-i18n-aria-label': 'aria-label',
+            'data-i18n-alt': 'alt'
+        };
+        Object.keys(attrMap).forEach(function(dataAttr) {
+            var targetAttr = attrMap[dataAttr];
+            var els = document.querySelectorAll('[' + dataAttr + ']');
+            for (var j = 0; j < els.length; j++) {
+                var k = els[j].getAttribute(dataAttr);
+                if (window.i18n && window.i18n[lang] && window.i18n[lang][k] !== undefined) {
+                    els[j].setAttribute(targetAttr, window.i18n[lang][k]);
+                }
+            }
+        });
+
+        // 4. Mettre a jour le label du bouton langue
+        var label = document.querySelector('.lang-label, #langLabel');
+        if (label) {
+            label.textContent = lang === 'fr' ? 'FR' : 'EN';
+        }
+        var btn = document.querySelector('.lang-toggle, #langToggle, .lang-switcher');
+        if (btn) {
+            btn.setAttribute('data-current-lang', lang);
+            btn.setAttribute('aria-label', lang === 'fr' ? 'Passer en anglais' : 'Switch to French');
+        }
+
+        // 5. Evenement global pour les scripts qui veulent reagir
+        try {
+            var ev = new CustomEvent('langchange', { detail: { lang: lang } });
+            document.dispatchEvent(ev);
+        } catch(e) {}
+    }
+
+    // Changer la langue : stocke + applique + met a jour
+    window.setLang = function(lang) {
+        if (lang !== 'fr' && lang !== 'en') lang = 'fr';
+        try { localStorage.setItem(LANG_KEY, lang); } catch(e) {}
+        applyLang(lang);
+    };
+
+    // Toggle FR <-> EN
+    window.toggleLang = function() {
+        var current = getSavedLang();
+        window.setLang(current === 'fr' ? 'en' : 'fr');
+    };
+
+    // Au chargement : appliquer la langue sauvee
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            applyLang(getSavedLang());
+        });
+    } else {
+        applyLang(getSavedLang());
+    }
+
+    // Attacher automatiquement au bouton langue s'il existe
+    document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.querySelector('.lang-toggle, #langToggle, .lang-switcher, #lang-switcher, .language-selector');
+        if (btn && !btn.dataset.i18nBound) {
+            btn.dataset.i18nBound = '1';
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                window.toggleLang();
+            });
+        }
+    });
+})();
+</script>
 </body>
 </html>

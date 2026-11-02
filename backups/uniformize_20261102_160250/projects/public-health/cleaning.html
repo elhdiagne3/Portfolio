@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html><head>
+<script id="dark-default-portfolio">
+(function() {
+    try {
+        var saved = localStorage.getItem('theme');
+        var theme = saved || 'dark';   // DARK PAR DEFAUT DARK_PAR_DEFAUT_PORTFOLIO
+        document.documentElement.setAttribute('data-theme', theme);
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    } catch(e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.classList.add('dark');
+    }
+})();
+</script><meta charset="UTF-8"><title>Cleaning</title></head>
+<body style="margin:0;">
+  <div style="padding:10px; background:#eee;"><a href="../public-health.html">← Retour</a></div>
+  <iframe src="cleaning-raw.html" style="width:100%; height:95vh; border:none;"></iframe>
+
+
+<script id="email-protect">
+(function(){
+  'use strict';
+  // Reconstruit le mailto au clic sans jamais exposer l'email en clair dans le DOM
+  function decode(b64){
+    try { return atob(b64); } catch(e){ return null; }
+  }
+  function bind(){
+    document.querySelectorAll('.email-icon-link').forEach(function(a){
+      if(a.dataset.emailBound === '1') return;
+      a.dataset.emailBound = '1';
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        var b64 = a.getAttribute('data-email-b64');
+        if(!b64) return;
+        var email = decode(b64);
+        if(!email) return;
+        // Ouvre le client mail sans exposer l'adresse dans le HTML statique
+        window.location.href = 'mailto:' + email;
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', bind);
+  } else { bind(); }
+  // Rebind apres un eventuel rerender
+  window.addEventListener('load', bind);
+})();
+</script>
+</body></html>

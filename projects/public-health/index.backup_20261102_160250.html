@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Public Health Dashboard — Portfolio Elhadji Diaraff DIAGNE</title>
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+  /* ===== STYLE UNIFORME DES PAGES PROJET ===== */
+  .project-page { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+  .breadcrumb { font-size: 0.9rem; color: #9ca3af; margin-bottom: 1.5rem; }
+  .breadcrumb a { color: #60a5fa; text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .project-page h1 { font-size: 2rem; margin: 0 0 0.75rem; }
+  .project-lead { color: #d1d5db; font-size: 1.05rem; margin-bottom: 1rem; max-width: 800px; line-height: 1.6; }
+  .project-stack { display: inline-block; font-size: 0.85rem; color: #60a5fa; background: rgba(96,165,250,0.1); padding: 0.35rem 0.8rem; border-radius: 999px; margin-bottom: 2.5rem; }
+  .subgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .subcard { padding: 1.5rem; border: 1px solid rgba(156,163,175,0.25); border-radius: 12px; background: rgba(30,41,59,0.6); transition: all 0.2s ease; }
+  .subcard:hover { border-color: rgba(96,165,250,0.6); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  .subcard-num { font-size: 0.8rem; font-weight: 700; color: #60a5fa; letter-spacing: 1px; margin-bottom: 0.5rem; }
+  .subcard h3 { font-size: 1.15rem; margin: 0 0 0.5rem; }
+  .subcard p { font-size: 0.9rem; color: #d1d5db; margin: 0 0 1rem; line-height: 1.5; }
+  .subcard-link { color: #60a5fa; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+  .subcard-link:hover { text-decoration: underline; }
+</style>
+<script src="../../js/i18n.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a href="../../index.html" class="logo">Elhadji Diaraff DIAGNE</a>
+    <ul class="nav-links">
+      <li><a href="../../index.html" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="../../projects.html" data-i18n="nav.projects">Projets</a></li>
+      <li><a href="../../cv.html" data-i18n="nav.cv">CV</a></li>
+      <li><a href="../../certifications.html" data-i18n="nav.certification">Certifications</a></li>
+      <li><a href="../../index.html#contact" data-i18n="nav.contact">Contact</a></li>
+      <li><button id="theme-toggle" class="icon-btn" aria-label="Theme">🌙</button></li>
+      <li><button id="lang-toggle" class="icon-btn" aria-label="Switch language">EN</button></li>
+    </ul>
+  </nav>
+</header>
+<main class="project-page">
+  <div class="breadcrumb"><a href="../../projects.html">← Projets</a> · Public Health Dashboard</div>
+  <h1>Public Health Dashboard</h1>
+  <p class="project-lead">Analyse et visualisation des indicateurs de santé publique.</p>
+  <span class="project-stack">Python · Streamlit · Plotly · Pandas</span>
+
+    <div class="subgrid">
+
+      <article class="subcard">
+        <div class="subcard-num">01</div>
+        <h3>Analyse</h3>
+        <p>Analyse exploratoire des données de santé.</p>
+        <a href="analysis.html" class="subcard-link">Ouvrir →</a>
+      </article>
+
+      <article class="subcard">
+        <div class="subcard-num">02</div>
+        <h3>Nettoyage</h3>
+        <p>Nettoyage et préparation.</p>
+        <a href="cleaning.html" class="subcard-link">Ouvrir →</a>
+      </article>
+
+    </div>
+</main>
+<script src="../../js/theme.js" defer></script>
+</body>
+</html>

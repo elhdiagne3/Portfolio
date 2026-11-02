@@ -1,7 +1,24 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head><meta charset="utf-8"/>
+<head>
+<script id="dark-default-portfolio">
+(function() {
+    try {
+        var saved = localStorage.getItem('theme');
+        var theme = saved || 'dark';   // DARK PAR DEFAUT DARK_PAR_DEFAUT_PORTFOLIO
+        document.documentElement.setAttribute('data-theme', theme);
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    } catch(e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.classList.add('dark');
+    }
+})();
+</script><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>K-means_Clustering</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
@@ -7793,7 +7810,30 @@ a.anchor-link {
     white-space: normal;
   }
 </style>
-<!-- End of mermaid configuration --></head>
+<!-- End of mermaid configuration --><style id="lang-icon-fix">
+/* Icone langue TOUJOURS visible */
+.lang-toggle,
+.lang-switcher,
+#langToggle,
+#lang-switcher,
+.language-selector,
+button[aria-label*="lang" i],
+button[title*="lang" i] {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 9999 !important;
+    position: relative !important;
+    pointer-events: auto !important;
+}
+/* Forcer la visibilite dans le header/navbar */
+header .lang-toggle,
+nav .lang-toggle,
+.navbar .lang-toggle {
+    color: inherit !important;
+}
+</style>
+</head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=adfde220">
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=0465d19c">

@@ -1,9 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<script id="dark-default-portfolio">
+(function() {
+    try {
+        var saved = localStorage.getItem('theme');
+        var theme = saved || 'dark';   // DARK PAR DEFAUT DARK_PAR_DEFAUT_PORTFOLIO
+        document.documentElement.setAttribute('data-theme', theme);
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    } catch(e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.classList.add('dark');
+    }
+})();
+</script>
   <meta charset="UTF-8">
   <title>Segmentation E-commerce - Portfolio</title>
   <link rel="stylesheet" href="../css/style.css">
+<style id="lang-icon-fix">
+/* Icone langue TOUJOURS visible */
+.lang-toggle,
+.lang-switcher,
+#langToggle,
+#lang-switcher,
+.language-selector,
+button[aria-label*="lang" i],
+button[title*="lang" i] {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 9999 !important;
+    position: relative !important;
+    pointer-events: auto !important;
+}
+/* Forcer la visibilite dans le header/navbar */
+header .lang-toggle,
+nav .lang-toggle,
+.navbar .lang-toggle {
+    color: inherit !important;
+}
+</style>
 </head>
 <body>
 <header class="site-header"><nav class="nav"><a href="../index.html" class="logo">Elhadji Diaraff DIAGNE</a>

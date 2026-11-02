@@ -1,5 +1,45 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>Cleaning</title></head>
+<html><head>
+<script id="dark-default-portfolio">
+(function() {
+    try {
+        var saved = localStorage.getItem('theme');
+        var theme = saved || 'dark';   // DARK PAR DEFAUT DARK_PAR_DEFAUT_PORTFOLIO
+        document.documentElement.setAttribute('data-theme', theme);
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    } catch(e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.classList.add('dark');
+    }
+})();
+</script><meta charset="UTF-8"><title>Cleaning</title><style id="lang-icon-fix">
+/* Icone langue TOUJOURS visible */
+.lang-toggle,
+.lang-switcher,
+#langToggle,
+#lang-switcher,
+.language-selector,
+button[aria-label*="lang" i],
+button[title*="lang" i] {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 9999 !important;
+    position: relative !important;
+    pointer-events: auto !important;
+}
+/* Forcer la visibilite dans le header/navbar */
+header .lang-toggle,
+nav .lang-toggle,
+.navbar .lang-toggle {
+    color: inherit !important;
+}
+</style>
+</head>
 <body style="margin:0;">
   <div style="padding:10px; background:#eee;"><a href="../public-health.html">← Retour</a></div>
   <iframe src="cleaning-raw.html" style="width:100%; height:95vh; border:none;"></iframe>

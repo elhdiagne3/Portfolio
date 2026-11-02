@@ -27,6 +27,8 @@ const translations = {
 
     'nav.home': 'Accueil',
     'nav.projects': 'Projets',
+    'projects.title': 'Mes projets',
+    'projects.intro': 'Une sélection de projets data science, machine learning et data engineering.',
     'nav.cv': 'CV',
     'nav.certification': 'Certifications',
     'cert.title': 'Certifications',
@@ -116,6 +118,8 @@ const translations = {
 
     'nav.home': 'Home',
     'nav.projects': 'Projects',
+    'projects.title': 'My projects',
+    'projects.intro': 'A selection of data science, machine learning and data engineering projects.',
     'nav.cv': 'Resume',
     'nav.certification': 'Certifications',
     'cert.title': 'Certifications',

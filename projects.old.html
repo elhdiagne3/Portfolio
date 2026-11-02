@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<script id="dark-default-portfolio">
+(function() {
+    try {
+        var saved = localStorage.getItem('theme');
+        var theme = saved || 'dark';   // DARK PAR DEFAUT DARK_PAR_DEFAUT_PORTFOLIO
+        document.documentElement.setAttribute('data-theme', theme);
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    } catch(e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.classList.add('dark');
+    }
+})();
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets — Elhadji Diaraff DIAGNE</title>
+  <link rel="stylesheet" href="css/style.css">
+<style id="site-fix-2026">
+/* Bouton langue - style gris comme Contact */
+.lang-toggle{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:0.35rem; padding:0.4rem 0.85rem;
+  background:transparent; border:1px solid rgba(156,163,175,0.35);
+  border-radius:8px; color:#9ca3af;
+  font-weight:600; font-size:0.9rem; cursor:pointer;
+  transition:all 0.2s ease; margin-left:0.5rem;
+  font-family:inherit;
+}
+.lang-toggle:hover{ color:#e5e7eb; border-color:#e5e7eb; background:rgba(229,231,235,0.05); }
+.lang-toggle:focus{ outline:2px solid #60a5fa; outline-offset:2px; }
+.lang-toggle svg{ width:16px; height:16px; stroke:currentColor; fill:none; }
+
+/* Email CV lisible */
+.cv-email, a[href^="mailto:"]{
+  color:#60a5fa !important; font-weight:600 !important;
+  text-decoration:underline !important; text-underline-offset:3px !important;
+  opacity:1 !important; visibility:visible !important;
+}
+a[href^="mailto:"]:hover{ color:#93c5fd !important; }
+
+/* Badge Resident Permanent */
+.cv-resident-badge{
+  display:inline-flex; align-items:center; gap:0.5rem;
+  margin:0.75rem 0; padding:0.4rem 0.9rem;
+  background:rgba(34,197,94,0.12);
+  border:1px solid rgba(34,197,94,0.4);
+  border-radius:999px; font-size:0.9rem; font-weight:600;
+  color:#22c55e;
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">Elhadji Diaraff DIAGNE</a>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projects.html">Projets</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><button id="theme-toggle" class="icon-btn" aria-label="Thème">🌙</button>
+        <li><button id="lang-toggle" class="icon-btn" aria-label="Switch language">EN</button></li></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="page-head">
+    <h1>Projets</h1>
+    <p class="intro">Une sélection de projets data — de l'exploration au déploiement.</p>
+  </section>
+<!-- 
+  <section>
+    </section>
+
+    <section>
+      </section>
+
+    <section>
+      </section>
+
+    <section>
+      </section> -->
+
+    <!-- EDUCATION_START -->
+    
+    <!-- EDUCATION_END -->
+<div class="project-grid" style="max-width: 1100px; margin: 0 auto; justify-content: center; gap: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+      <article class="project-card">
+        <h3>Consommation Batiments</h3>
+        <p></p>
+        <p class="stack">Python · scikit-learn · Pandas · Jupyter</p>
+        <a href="projects/consommation-batiments-prediction/index.html">Voir le projet →</a>
+      </article>
+
+      <article class="project-card">
+        <h3 data-i18n="p1.title">Water Level Forecast</h3>
+        <p data-i18n="p1.desc">Modélisation prédictive des niveaux d'eau et visualisation interactive des séries temporelles hydrologiques.</p>
+        <p class="stack">R · SQL · Dygraphs · Time Series</p>
+        <a href="https://elhdiagne3.github.io/WaterLevel-Forecast/" target="_blank" rel="noopener" data-i18n="p1.link">Voir les résultats →</a>
+      </article>
+
+      <article class="project-card">
+        <h3 data-i18n="p2.title">Analyse du système éducatif</h3>
+        <p data-i18n="p2.desc">Analyse exploratoire de données éducatives (2019-2022) : statistiques descriptives, tendances et visualisations.</p>
+        <p class="stack">Python · Pandas · Matplotlib · Seaborn</p>
+        <a href="projects/education-analysis.html" target="_blank" rel="noopener" data-i18n="p2.link">Voir le module →</a>
+      </article>
+
+      <article class="project-card">
+        <h3 data-i18n="p5.title">Segmentation Clients E-commerce</h3>
+        <p data-i18n="p5.desc">Segmentation RFM et clustering K-Means des clients e-commerce pour optimiser le ciblage marketing.</p>
+        <p class="stack">Python · scikit-learn · K-Means · RFM</p>
+        <a href="projects/ecommerce-segmentation.html" data-i18n="p5.link">Voir les résultats →</a>
+      </article>
+
+      <article class="project-card">
+        <h3 data-i18n="p6.title">Public Health Dashboard</h3>
+        <p data-i18n="p6.desc">Application interactive de suivi des indicateurs de sante publique avec visualisations temps reel.</p>
+        <p class="stack">Python · Streamlit · Plotly · Pandas</p>
+        <a href="projects/public-health.html" data-i18n="p6.link">Voir les resultats →</a>
+      </article>
+
+    </div>
+
+</main>
+
+<footer id="contact" class="site-footer">
+  <h2>Contact</h2>
+  <p>Email : <a href="#" class="email-icon-link" data-email-b64="ZGlhZ25lZGlhcmFmZkB5YWhvby5mcg==" aria-label="Envoyer un email" title="Envoyer un email" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid rgba(156,163,175,0.35);border-radius:8px;color:#60a5fa;text-decoration:none;transition:all 0.2s ease;" onmouseover="this.style.color='#93c5fd';this.style.borderColor='#93c5fd'" onmouseout="this.style.color='#60a5fa';this.style.borderColor='rgba(156,163,175,0.35)'">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="2" y="4" width="20" height="16" rx="2"/>
+    <path d="m2 7 10 6 10-6"/>
+  </svg>
+</a></p>
+  <p>
+    <a href="https://github.com/elhdiagne3" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub" class="social-icon-link" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid rgba(156,163,175,0.35);border-radius:8px;color:#e5e7eb;text-decoration:none;transition:all 0.2s ease;" onmouseover="this.style.color='#ffffff';this.style.borderColor='#e5e7eb';this.style.background='rgba(229,231,235,0.1)'" onmouseout="this.style.color='#e5e7eb';this.style.borderColor='rgba(156,163,175,0.35)';this.style.background='transparent'"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1.01.07 1.54 1.03 1.54 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21.5c0 .27.16.58.67.48A10 10 0 0 0 22 12C22 6.48 17.52 2 12 2z"/></svg></a> ·
+    <a href="https://www.linkedin.com/in/elhadji-diaraff-d-a6680013a" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn" class="social-icon-link" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid rgba(156,163,175,0.35);border-radius:8px;color:#0a66c2;text-decoration:none;transition:all 0.2s ease;" onmouseover="this.style.color='#0a66c2';this.style.borderColor='#0a66c2';this.style.background='rgba(10,102,194,0.1)'" onmouseout="this.style.color='#0a66c2';this.style.borderColor='rgba(156,163,175,0.35)';this.style.background='transparent'"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+  </p>
+  <p class="copyright">© <span class="year"></span> Elhadji Diaraff DIAGNE</p>
+</footer>
+<script src="js/i18n.js"></script>
+  <script src="js/script.js"></script>
+
+
+
+<script id="email-protect">
+(function(){
+  'use strict';
+  // Reconstruit le mailto au clic sans jamais exposer l'email en clair dans le DOM
+  function decode(b64){
+    try { return atob(b64); } catch(e){ return null; }
+  }
+  function bind(){
+    document.querySelectorAll('.email-icon-link').forEach(function(a){
+      if(a.dataset.emailBound === '1') return;
+      a.dataset.emailBound = '1';
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        var b64 = a.getAttribute('data-email-b64');
+        if(!b64) return;
+        var email = decode(b64);
+        if(!email) return;
+        // Ouvre le client mail sans exposer l'adresse dans le HTML statique
+        window.location.href = 'mailto:' + email;
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', bind);
+  } else { bind(); }
+  // Rebind apres un eventuel rerender
+  window.addEventListener('load', bind);
+})();
+</script>
+</body>
+</html>

@@ -71,14 +71,6 @@ a[href^="mailto:"]:hover{ color:#93c5fd !important; }
         <li><button id="lang-toggle" class="icon-btn" aria-label="Switch language">EN</button></li></li>
     </ul>
   </nav>
-
-  <button type="button" class="lang-toggle" aria-label="Changer la langue / Switch language" title="Changer la langue">
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <circle cx="12" cy="12" r="9" stroke-width="1.8"/>
-    <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" stroke-width="1.5" fill="none"/>
-  </svg>
-  <span class="lang-text">FR</span>
-</button>
 </header>
 
 <main>
@@ -150,68 +142,93 @@ a[href^="mailto:"]:hover{ color:#93c5fd !important; }
 
 
 
-<script id="en-default-fix-2026">
+<script id="lang-final-fix">
 (function(){
   'use strict';
   var KEY = 'portfolio-lang';
+  var log = function(){ if(window.console) console.log.apply(console, ['[LANG]'].concat([].slice.call(arguments))); };
 
   function getLang(){
-    try {
-      var v = localStorage.getItem(KEY);
-      if(v === 'fr' || v === 'en') return v;
-    } catch(e){}
+    try { var v = localStorage.getItem(KEY); if(v==='fr'||v==='en') return v; } catch(e){}
     return 'en';  // EN PAR DEFAUT
   }
 
   function setLangSafe(l){
-    if(l !== 'fr' && l !== 'en') l = 'en';
+    if(l!=='fr' && l!=='en') l = 'en';
     try { localStorage.setItem(KEY, l); } catch(e){}
-    // Priorite au setLang de i18n.js
-    if(typeof window.setLang === 'function'){ window.setLang(l); return; }
-    try { if(typeof setLang === 'function'){ setLang(l); return; } } catch(e){}
-    console.warn('[EN-FIX] setLang indisponible');
+    log('setLang', l);
+    // Tenter toutes les fonctions possibles fournies par i18n.js
+    if(typeof window.setLang === 'function'){ try{ window.setLang(l); return; }catch(e){ log('window.setLang KO', e); } }
+    if(typeof setLang === 'function'){ try{ setLang(l); return; }catch(e){ log('setLang KO', e); } }
+    if(typeof window.applyLang === 'function'){ try{ window.applyLang(l); return; }catch(e){} }
+    if(typeof applyLang === 'function'){ try{ applyLang(l); return; }catch(e){} }
+    console.warn('[LANG] Aucune fonction setLang/applyLang disponible. i18n.js charge ?');
+    // Fallback manuel : parcourir data-i18n
+    try {
+      var dict = (window.translations || (typeof translations !== 'undefined' && translations)) ? (window.translations||translations)[l] : null;
+      if(dict){
+        document.querySelectorAll('[data-i18n]').forEach(function(el){
+          var k = el.getAttribute('data-i18n');
+          if(dict[k] !== undefined){
+            if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = dict[k];
+            else el.textContent = dict[k];
+          }
+        });
+        log('fallback manuel applique');
+      }
+    } catch(e){ log('fallback KO', e); }
   }
 
-  function toggle(){
+  function updateLabel(){
     var cur = getLang();
-    setLangSafe(cur === 'en' ? 'fr' : 'en');
+    document.querySelectorAll('#lang-toggle').forEach(function(b){
+      b.textContent = (cur === 'en') ? 'FR' : 'EN';
+      b.setAttribute('title', (cur === 'en') ? 'Passer en français' : 'Switch to English');
+    });
   }
-  window.toggleLangEN = toggle;
 
   function bind(){
-    document.querySelectorAll('.lang-toggle').forEach(function(b){
-      if(b.dataset.enFixBound === '1') return;
-      b.dataset.enFixBound = '1';
+    var btns = document.querySelectorAll('#lang-toggle');
+    if(!btns.length){ console.warn('[LANG] bouton #lang-toggle introuvable'); return; }
+    btns.forEach(function(b){
+      if(b.dataset.langFinalBound === '1') return;
+      b.dataset.langFinalBound = '1';
       b.addEventListener('click', function(e){
-        e.preventDefault(); e.stopPropagation();
-        toggle();
-      });
+        e.preventDefault();
+        e.stopPropagation();
+        var cur = getLang();
+        var next = (cur === 'en') ? 'fr' : 'en';
+        log('clic ->', cur, 'to', next);
+        setLangSafe(next);
+        updateLabel();
+      }, true);
     });
-    // Mettre a jour le label du bouton selon la langue active
-    function updateLabel(){
-      var cur = getLang();
-      // Si EN actif, le bouton propose FR (et vice-versa)
-      document.querySelectorAll('.lang-toggle .lang-text').forEach(function(el){
-        el.textContent = (cur === 'en') ? 'FR' : 'EN';
-      });
-    }
     updateLabel();
-    document.addEventListener('langchange', function(){ updateLabel(); });
-    document.addEventListener('click', function(){ setTimeout(updateLabel, 50); });
+    log('bouton(s) branche(s):', btns.length);
   }
 
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', bind);
-  } else { bind(); }
-
-  // Au chargement complet, forcer l'application de EN si rien de sauve
-  window.addEventListener('load', function(){
+  // Init
+  function init(){
+    bind();
+    // Si aucune preference sauvee, forcer EN
     var saved = null;
     try { saved = localStorage.getItem(KEY); } catch(e){}
     if(saved !== 'fr' && saved !== 'en'){
       setLangSafe('en');
+    } else {
+      setLangSafe(saved);
     }
-  });
+    updateLabel();
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      // Attendre 200ms pour que i18n.js (defer) termine son init
+      setTimeout(init, 200);
+    });
+  } else {
+    setTimeout(init, 200);
+  }
 })();
 </script>
 </body>

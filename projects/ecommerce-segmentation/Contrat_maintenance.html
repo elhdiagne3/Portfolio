@@ -7875,6 +7875,48 @@ nav .lang-switcher {
     margin-left: 0.5rem;
 }
 </style>
+<style id="lang-email-nuclear-css">
+/* ---- BOUTON LANGUE : gris visible, comme Contact ---- */
+.lang-toggle,.lang-switcher,#langToggle,#lang-switcher,
+.language-selector,.lang-btn,#langBtn,.btn-lang,
+[data-action="toggle-lang"],button[aria-label*="lang" i]{
+  color:#9ca3af !important;
+  stroke:#9ca3af !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  z-index:9999 !important;
+  position:relative !important;
+  pointer-events:auto !important;
+  cursor:pointer !important;
+  vertical-align:middle !important;
+  margin-left:0.5rem !important;
+}
+.lang-toggle:hover,.lang-switcher:hover,#langToggle:hover,#langBtn:hover{
+  color:#e5e7eb !important;
+  stroke:#e5e7eb !important;
+}
+.lang-toggle svg,.lang-switcher svg,#langToggle svg{
+  stroke:#9ca3af !important;
+  fill:none !important;
+}
+
+/* ---- EMAIL : toujours lisible ---- */
+.cv-email,.email,a[href^="mailto:"],[class*="email"],[id*="email"]{
+  color:#60a5fa !important;
+  font-weight:600 !important;
+  font-size:1.05rem !important;
+  text-decoration:underline !important;
+  text-underline-offset:3px !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  display:inline-block !important;
+  letter-spacing:0.3px !important;
+}
+a[href^="mailto:"]:hover{ color:#93c5fd !important; }
+</style>
 </head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=b703e799">
@@ -8614,111 +8656,123 @@ C:\Users\diagne080894\Documents\Min\envs\pyenv1\lib\site-packages\sklearn\cluste
 </div>
 </main>
 
-<script id="i18n-robust-fix">
-(function() {
-    'use strict';
-    var LANG_KEY = 'portfolio-lang';
-    var DEBUG = true;
-    function log() { if (DEBUG) console.log.apply(console, ['[i18n]'].concat([].slice.call(arguments))); }
 
-    function getLang() {
-        try { return localStorage.getItem(LANG_KEY) || 'fr'; } catch(e) { return 'fr'; }
+<script id="lang-nuclear-fix">
+(function(){
+  'use strict';
+  var KEY = 'portfolio-lang';
+  var DEBUG = true;
+  function log(){ if(DEBUG) console.log.apply(console, ['[LANG]'].concat([].slice.call(arguments))); }
+
+  // Recuperer la langue
+  function getLang(){
+    try { var v = localStorage.getItem(KEY); if(v==='fr'||v==='en') return v; } catch(e){}
+    return 'fr';
+  }
+  function setLang(l){
+    if(l!=='fr'&&l!=='en') l='fr';
+    try { localStorage.setItem(KEY, l); } catch(e){}
+    apply(l);
+  }
+  window.setLang = setLang;
+  window.toggleLang = function(){ var cur=getLang(); log('toggle', cur, '->', cur==='fr'?'en':'fr'); setLang(cur==='fr'?'en':'fr'); };
+
+  // Chercher le dictionnaire de traductions de facon agressive
+  function getDict(lang){
+    var sources = [window.i18n, window.translations, window.LANG, window.messages];
+    // Variable globale directe 'i18n'
+    try { if(typeof i18n !== 'undefined') sources.push(i18n); } catch(e){}
+    try { if(typeof translations !== 'undefined') sources.push(translations); } catch(e){}
+    for(var i=0;i<sources.length;i++){
+      var s = sources[i];
+      if(s && s[lang] && typeof s[lang]==='object') return s[lang];
     }
-    function setLang(lang) {
-        if (lang !== 'fr' && lang !== 'en') lang = 'fr';
-        try { localStorage.setItem(LANG_KEY, lang); } catch(e) {}
-        apply(lang);
-    }
-    function toggleLang() {
-        setLang(getLang() === 'fr' ? 'en' : 'fr');
-    }
+    return null;
+  }
 
-    function apply(lang) {
-        log('apply lang =', lang);
-        document.documentElement.lang = lang;
+  // Appliquer la langue
+  function apply(lang){
+    log('apply', lang);
+    document.documentElement.lang = lang;
+    if(document.body) document.body.setAttribute('data-lang', lang);
 
-        // Verifier que window.i18n existe
-        if (!window.i18n || !window.i18n[lang]) {
-            console.warn('[i18n] window.i18n manquant ou langue absente. Structure attendue : window.i18n = { fr:{...}, en:{...} }');
-            // Fallback : essayer de lire une variable globale nommee i18n ou translations
-            if (typeof i18n !== 'undefined' && i18n[lang]) window.i18n = i18n;
-            else if (typeof translations !== 'undefined' && translations[lang]) window.i18n = translations;
-        }
+    var dict = getDict(lang);
+    if(!dict){ console.warn('[LANG] Aucun dictionnaire trouve pour', lang, '- verifiez js/i18n.js'); }
+    var n = 0;
 
-        var dict = (window.i18n && window.i18n[lang]) || {};
-        var count = 0;
+    // [data-i18n] -> textContent
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.getAttribute('data-i18n');
+      if(dict && dict[k]!==undefined){
+        if(el.tagName==='INPUT'||el.tagName==='TEXTAREA') el.placeholder = dict[k];
+        else if(el.tagName==='IMG') el.alt = dict[k];
+        else el.textContent = dict[k];
+        n++;
+      }
+    });
 
-        // data-i18n -> textContent
-        document.querySelectorAll('[data-i18n]').forEach(function(el) {
-            var key = el.getAttribute('data-i18n');
-            if (dict[key] !== undefined) {
-                el.textContent = dict[key];
-                count++;
-            }
+    // Attributs
+    var amap = {'data-i18n-placeholder':'placeholder','data-i18n-title':'title','data-i18n-aria-label':'aria-label','data-i18n-alt':'alt'};
+    Object.keys(amap).forEach(function(da){
+      document.querySelectorAll('['+da+']').forEach(function(el){
+        var k = el.getAttribute(da);
+        if(dict && dict[k]!==undefined){ el.setAttribute(amap[da], dict[k]); n++; }
+      });
+    });
+
+    log('traduits:', n, '/ total data-i18n:', document.querySelectorAll('[data-i18n]').length);
+
+    // Label bouton
+    document.querySelectorAll('.lang-label,#langLabel,.lang-toggle .label').forEach(function(el){
+      el.textContent = lang.toUpperCase();
+    });
+    document.dispatchEvent(new CustomEvent('langchange',{detail:{lang:lang}}));
+  }
+
+  // Attacher le clic — TRES LARGE : tout ce qui ressemble a un bouton langue
+  function bind(){
+    var sel = [
+      '.lang-toggle','#langToggle','.lang-switcher','#lang-switcher',
+      '.language-selector','#languageSelector','[data-action="toggle-lang"]',
+      '[data-lang-toggle]','#langBtn','.lang-btn','#lang-btn','.btn-lang',
+      'button[aria-label*="lang" i]','button[title*="lang" i]',
+      'a[aria-label*="lang" i]','a[title*="lang" i]',
+      '[onclick*="Lang"]','[onclick*="lang"]'
+    ];
+    var total = 0;
+    var seen = new Set();
+    sel.forEach(function(s){
+      try {
+        document.querySelectorAll(s).forEach(function(btn){
+          if(seen.has(btn)) return;
+          seen.add(btn);
+          if(btn.dataset.langBound==='1') return;
+          btn.dataset.langBound='1';
+          // Forcer la visibilite
+          btn.style.display = btn.style.display || 'inline-flex';
+          btn.style.visibility = 'visible';
+          btn.style.opacity = '1';
+          btn.style.pointerEvents = 'auto';
+          btn.addEventListener('click', function(e){
+            e.preventDefault(); e.stopPropagation();
+            log('CLIC bouton', btn);
+            window.toggleLang();
+          }, true);
+          total++;
         });
-
-        // data-i18n-placeholder / title / aria-label / alt
-        var attrMap = {
-            'data-i18n-placeholder': 'placeholder',
-            'data-i18n-title': 'title',
-            'data-i18n-aria-label': 'aria-label',
-            'data-i18n-alt': 'alt'
-        };
-        Object.keys(attrMap).forEach(function(da) {
-            var ta = attrMap[da];
-            document.querySelectorAll('[' + da + ']').forEach(function(el) {
-                var k = el.getAttribute(da);
-                if (dict[k] !== undefined) { el.setAttribute(ta, dict[k]); count++; }
-            });
-        });
-
-        log('elements traduits :', count, '/ data-i18n presents :', document.querySelectorAll('[data-i18n]').length);
-
-        // Label du bouton
-        var lbl = document.querySelector('.lang-label, #langLabel, .lang-toggle .label');
-        if (lbl) lbl.textContent = lang.toUpperCase();
-
-        // Evenement global
-        document.dispatchEvent(new CustomEvent('langchange', { detail: { lang: lang } }));
+      } catch(e){}
+    });
+    log('boutons langue attaches:', total);
+    if(total===0){
+      console.warn('[LANG] AUCUN bouton langue detecte. Ajoutez class="lang-toggle" a votre bouton.');
     }
+  }
 
-    // Attacher le clic sur TOUS les candidats boutons langue
-    function bindButtons() {
-        var selectors = [
-            '.lang-toggle', '#langToggle', '.lang-switcher', '#lang-switcher',
-            '.language-selector', '#languageSelector', '[data-action="toggle-lang"]',
-            'button[aria-label*="lang" i]', 'button[title*="lang" i]', '[onclick*="Lang"]'
-        ];
-        var found = 0;
-        selectors.forEach(function(sel) {
-            document.querySelectorAll(sel).forEach(function(btn) {
-                if (btn.dataset.i18nRobustBound === '1') return;
-                btn.dataset.i18nRobustBound = '1';
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault(); e.stopPropagation();
-                    log('clic bouton langue ->', btn);
-                    toggleLang();
-                }, true);
-                found++;
-            });
-        });
-        log('boutons langue attaches :', found);
-        if (found === 0) console.warn('[i18n] Aucun bouton langue detecte. Ajoutez class="lang-toggle" sur votre bouton.');
-    }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', function(){ bind(); apply(getLang()); });
+  else { bind(); apply(getLang()); }
 
-    // Exposer globalement
-    window.setLang = setLang;
-    window.toggleLang = toggleLang;
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            bindButtons();
-            apply(getLang());
-        });
-    } else {
-        bindButtons();
-        apply(getLang());
-    }
+  // Rebind apres chargement complet (au cas ou d'autres scripts remplacent le DOM)
+  window.addEventListener('load', function(){ bind(); });
 })();
 </script>
 </body>

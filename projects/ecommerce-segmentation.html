@@ -109,114 +109,112 @@ nav .lang-switcher {
 </div></section>
 </main>
 <footer class="site-footer"><p class="copyright">© <span class="year"></span> Elhadji Diaraff DIAGNE</p></footer>
-<script id="i18n-global-portfolio">
+
+<script id="i18n-robust-fix">
 (function() {
     'use strict';
-
-    // Cle de stockage
     var LANG_KEY = 'portfolio-lang';
+    var DEBUG = true;
+    function log() { if (DEBUG) console.log.apply(console, ['[i18n]'].concat([].slice.call(arguments))); }
 
-    // Recuperer la langue sauvee, sinon FR par defaut
-    function getSavedLang() {
-        try {
-            return localStorage.getItem(LANG_KEY) || 'fr';
-        } catch(e) {
-            return 'fr';
-        }
+    function getLang() {
+        try { return localStorage.getItem(LANG_KEY) || 'fr'; } catch(e) { return 'fr'; }
+    }
+    function setLang(lang) {
+        if (lang !== 'fr' && lang !== 'en') lang = 'fr';
+        try { localStorage.setItem(LANG_KEY, lang); } catch(e) {}
+        apply(lang);
+    }
+    function toggleLang() {
+        setLang(getLang() === 'fr' ? 'en' : 'fr');
     }
 
-    // Appliquer la langue a TOUT le document
-    function applyLang(lang) {
-        // 1. Attribut global
-        document.documentElement.setAttribute('lang', lang);
-        document.body && document.body.setAttribute('data-lang', lang);
+    function apply(lang) {
+        log('apply lang =', lang);
+        document.documentElement.lang = lang;
 
-        // 2. Traduire tous les elements [data-i18n]
-        var nodes = document.querySelectorAll('[data-i18n]');
-        for (var i = 0; i < nodes.length; i++) {
-            var key = nodes[i].getAttribute('data-i18n');
-            if (window.i18n && window.i18n[lang] && window.i18n[lang][key] !== undefined) {
-                var val = window.i18n[lang][key];
-                if (nodes[i].tagName === 'INPUT' || nodes[i].tagName === 'TEXTAREA') {
-                    nodes[i].placeholder = val;
-                } else if (nodes[i].tagName === 'IMG') {
-                    nodes[i].alt = val;
-                } else {
-                    nodes[i].textContent = val;
-                }
-            }
+        // Verifier que window.i18n existe
+        if (!window.i18n || !window.i18n[lang]) {
+            console.warn('[i18n] window.i18n manquant ou langue absente. Structure attendue : window.i18n = { fr:{...}, en:{...} }');
+            // Fallback : essayer de lire une variable globale nommee i18n ou translations
+            if (typeof i18n !== 'undefined' && i18n[lang]) window.i18n = i18n;
+            else if (typeof translations !== 'undefined' && translations[lang]) window.i18n = translations;
         }
 
-        // 3. Traduire les attributs [data-i18n-placeholder], [data-i18n-title], [data-i18n-aria]
+        var dict = (window.i18n && window.i18n[lang]) || {};
+        var count = 0;
+
+        // data-i18n -> textContent
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+            var key = el.getAttribute('data-i18n');
+            if (dict[key] !== undefined) {
+                el.textContent = dict[key];
+                count++;
+            }
+        });
+
+        // data-i18n-placeholder / title / aria-label / alt
         var attrMap = {
             'data-i18n-placeholder': 'placeholder',
             'data-i18n-title': 'title',
             'data-i18n-aria-label': 'aria-label',
             'data-i18n-alt': 'alt'
         };
-        Object.keys(attrMap).forEach(function(dataAttr) {
-            var targetAttr = attrMap[dataAttr];
-            var els = document.querySelectorAll('[' + dataAttr + ']');
-            for (var j = 0; j < els.length; j++) {
-                var k = els[j].getAttribute(dataAttr);
-                if (window.i18n && window.i18n[lang] && window.i18n[lang][k] !== undefined) {
-                    els[j].setAttribute(targetAttr, window.i18n[lang][k]);
-                }
-            }
+        Object.keys(attrMap).forEach(function(da) {
+            var ta = attrMap[da];
+            document.querySelectorAll('[' + da + ']').forEach(function(el) {
+                var k = el.getAttribute(da);
+                if (dict[k] !== undefined) { el.setAttribute(ta, dict[k]); count++; }
+            });
         });
 
-        // 4. Mettre a jour le label du bouton langue
-        var label = document.querySelector('.lang-label, #langLabel');
-        if (label) {
-            label.textContent = lang === 'fr' ? 'FR' : 'EN';
-        }
-        var btn = document.querySelector('.lang-toggle, #langToggle, .lang-switcher');
-        if (btn) {
-            btn.setAttribute('data-current-lang', lang);
-            btn.setAttribute('aria-label', lang === 'fr' ? 'Passer en anglais' : 'Switch to French');
-        }
+        log('elements traduits :', count, '/ data-i18n presents :', document.querySelectorAll('[data-i18n]').length);
 
-        // 5. Evenement global pour les scripts qui veulent reagir
-        try {
-            var ev = new CustomEvent('langchange', { detail: { lang: lang } });
-            document.dispatchEvent(ev);
-        } catch(e) {}
+        // Label du bouton
+        var lbl = document.querySelector('.lang-label, #langLabel, .lang-toggle .label');
+        if (lbl) lbl.textContent = lang.toUpperCase();
+
+        // Evenement global
+        document.dispatchEvent(new CustomEvent('langchange', { detail: { lang: lang } }));
     }
 
-    // Changer la langue : stocke + applique + met a jour
-    window.setLang = function(lang) {
-        if (lang !== 'fr' && lang !== 'en') lang = 'fr';
-        try { localStorage.setItem(LANG_KEY, lang); } catch(e) {}
-        applyLang(lang);
-    };
+    // Attacher le clic sur TOUS les candidats boutons langue
+    function bindButtons() {
+        var selectors = [
+            '.lang-toggle', '#langToggle', '.lang-switcher', '#lang-switcher',
+            '.language-selector', '#languageSelector', '[data-action="toggle-lang"]',
+            'button[aria-label*="lang" i]', 'button[title*="lang" i]', '[onclick*="Lang"]'
+        ];
+        var found = 0;
+        selectors.forEach(function(sel) {
+            document.querySelectorAll(sel).forEach(function(btn) {
+                if (btn.dataset.i18nRobustBound === '1') return;
+                btn.dataset.i18nRobustBound = '1';
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault(); e.stopPropagation();
+                    log('clic bouton langue ->', btn);
+                    toggleLang();
+                }, true);
+                found++;
+            });
+        });
+        log('boutons langue attaches :', found);
+        if (found === 0) console.warn('[i18n] Aucun bouton langue detecte. Ajoutez class="lang-toggle" sur votre bouton.');
+    }
 
-    // Toggle FR <-> EN
-    window.toggleLang = function() {
-        var current = getSavedLang();
-        window.setLang(current === 'fr' ? 'en' : 'fr');
-    };
+    // Exposer globalement
+    window.setLang = setLang;
+    window.toggleLang = toggleLang;
 
-    // Au chargement : appliquer la langue sauvee
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
-            applyLang(getSavedLang());
+            bindButtons();
+            apply(getLang());
         });
     } else {
-        applyLang(getSavedLang());
+        bindButtons();
+        apply(getLang());
     }
-
-    // Attacher automatiquement au bouton langue s'il existe
-    document.addEventListener('DOMContentLoaded', function() {
-        var btn = document.querySelector('.lang-toggle, #langToggle, .lang-switcher, #lang-switcher, .language-selector');
-        if (btn && !btn.dataset.i18nBound) {
-            btn.dataset.i18nBound = '1';
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                window.toggleLang();
-            });
-        }
-    });
 })();
 </script>
 </body></html>

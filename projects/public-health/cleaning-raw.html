@@ -9505,5 +9505,34 @@ Columns (0,3,5,19,20,24,25,26,27,28,35,36,37,38,39,48) have mixed types.Specify 
 </main>
 
 
+<script id="email-protect">
+(function(){
+  'use strict';
+  // Reconstruit le mailto au clic sans jamais exposer l'email en clair dans le DOM
+  function decode(b64){
+    try { return atob(b64); } catch(e){ return null; }
+  }
+  function bind(){
+    document.querySelectorAll('.email-icon-link').forEach(function(a){
+      if(a.dataset.emailBound === '1') return;
+      a.dataset.emailBound = '1';
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        var b64 = a.getAttribute('data-email-b64');
+        if(!b64) return;
+        var email = decode(b64);
+        if(!email) return;
+        // Ouvre le client mail sans exposer l'adresse dans le HTML statique
+        window.location.href = 'mailto:' + email;
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', bind);
+  } else { bind(); }
+  // Rebind apres un eventuel rerender
+  window.addEventListener('load', bind);
+})();
+</script>
 </body>
 </html>

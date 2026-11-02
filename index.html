@@ -292,12 +292,46 @@ a[href^="mailto:"]:hover{ color:#93c5fd !important; }
       Discutons de vos projets data, ML ou MLOps.
     </p>
     <div class="footer-links" style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-bottom:1.5rem;">
-      <a href="mailto:diagne080894@gmail.com" style="color:#60a5fa;text-decoration:none;font-weight:600;">📧 diagne080894@gmail.com</a>
+      <a href="#" class="email-icon-link" data-email-b64="ZGlhZ25lZGlhcmFmZkB5YWhvby5mcg==" aria-label="Envoyer un email" title="Envoyer un email" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid rgba(156,163,175,0.35);border-radius:8px;color:#60a5fa;text-decoration:none;transition:all 0.2s ease;" onmouseover="this.style.color='#93c5fd';this.style.borderColor='#93c5fd'" onmouseout="this.style.color='#60a5fa';this.style.borderColor='rgba(156,163,175,0.35)'">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="2" y="4" width="20" height="16" rx="2"/>
+    <path d="m2 7 10 6 10-6"/>
+  </svg>
+</a>
       <a href="https://www.linkedin.com/in/elhadji-diaraff-d-a6680013a" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:none;font-weight:600;">💼 LinkedIn</a>
       <a href="https://github.com/elhdiagne3" target="_blank" rel="noopener" style="color:#e5e7eb;text-decoration:none;font-weight:600;">🐙 GitHub</a>
     </div>
     <p style="color:#6b7280;font-size:0.9rem;" data-i18n="footer.rights">© 2026 Elhadji Diaraff DIAGNE — Tous droits réservés</p>
   </div>
 </footer>
+<script id="email-protect">
+(function(){
+  'use strict';
+  // Reconstruit le mailto au clic sans jamais exposer l'email en clair dans le DOM
+  function decode(b64){
+    try { return atob(b64); } catch(e){ return null; }
+  }
+  function bind(){
+    document.querySelectorAll('.email-icon-link').forEach(function(a){
+      if(a.dataset.emailBound === '1') return;
+      a.dataset.emailBound = '1';
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        var b64 = a.getAttribute('data-email-b64');
+        if(!b64) return;
+        var email = decode(b64);
+        if(!email) return;
+        // Ouvre le client mail sans exposer l'adresse dans le HTML statique
+        window.location.href = 'mailto:' + email;
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', bind);
+  } else { bind(); }
+  // Rebind apres un eventuel rerender
+  window.addEventListener('load', bind);
+})();
+</script>
 </body>
 </html>

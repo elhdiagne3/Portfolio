@@ -77,7 +77,7 @@ a[href^="mailto:"]:hover{ color:#93c5fd !important; }
     <circle cx="12" cy="12" r="9" stroke-width="1.8"/>
     <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" stroke-width="1.5" fill="none"/>
   </svg>
-  <span class="lang-text">EN</span>
+  <span class="lang-text">FR</span>
 </button>
 </header>
 
@@ -150,69 +150,68 @@ a[href^="mailto:"]:hover{ color:#93c5fd !important; }
 
 
 
-<script id="site-fix-js-2026">
+<script id="en-default-fix-2026">
 (function(){
   'use strict';
-  // Attendre que i18n.js soit charge (il definit window.setLang normalement)
-  // mais s'il ne le fait pas, on expose nous-memes.
-  function waitI18n(cb, tries){
-    tries = tries || 0;
-    // Verifier qu'on a bien un setLang accessible
-    if(typeof window.setLang === 'function' || typeof setLang === 'function' || tries > 20){
-      cb();
-    } else {
-      setTimeout(function(){ waitI18n(cb, tries+1); }, 50);
-    }
+  var KEY = 'portfolio-lang';
+
+  function getLang(){
+    try {
+      var v = localStorage.getItem(KEY);
+      if(v === 'fr' || v === 'en') return v;
+    } catch(e){}
+    return 'en';  // EN PAR DEFAUT
   }
 
-  function doToggle(){
-    // Priorite 1 : window.toggleLang (injecte par i18n.js)
-    if(typeof window.toggleLang === 'function'){
-      window.toggleLang();
-      return;
-    }
-    // Priorite 2 : toggleLang global (portee script classique)
-    try { if(typeof toggleLang === 'function'){ toggleLang(); return; } } catch(e){}
-    // Priorite 3 : setLang avec l'inverse de la langue courante
-    var cur = 'fr';
-    try { cur = localStorage.getItem('portfolio-lang') || localStorage.getItem('lang') || 'fr'; } catch(e){}
-    var next = (cur === 'fr') ? 'en' : 'fr';
-    if(typeof window.setLang === 'function'){ window.setLang(next); return; }
-    try { if(typeof setLang === 'function'){ setLang(next); return; } } catch(e){}
-    console.warn('[FIX] Aucune fonction de changement de langue accessible. Verifiez js/i18n.js');
+  function setLangSafe(l){
+    if(l !== 'fr' && l !== 'en') l = 'en';
+    try { localStorage.setItem(KEY, l); } catch(e){}
+    // Priorite au setLang de i18n.js
+    if(typeof window.setLang === 'function'){ window.setLang(l); return; }
+    try { if(typeof setLang === 'function'){ setLang(l); return; } } catch(e){}
+    console.warn('[EN-FIX] setLang indisponible');
   }
+
+  function toggle(){
+    var cur = getLang();
+    setLangSafe(cur === 'en' ? 'fr' : 'en');
+  }
+  window.toggleLangEN = toggle;
 
   function bind(){
-    var btns = document.querySelectorAll('.lang-toggle');
-    btns.forEach(function(b){
-      if(b.dataset.fixBound === '1') return;
-      b.dataset.fixBound = '1';
+    document.querySelectorAll('.lang-toggle').forEach(function(b){
+      if(b.dataset.enFixBound === '1') return;
+      b.dataset.enFixBound = '1';
       b.addEventListener('click', function(e){
         e.preventDefault(); e.stopPropagation();
-        console.log('[FIX] clic bouton langue -> toggle');
-        doToggle();
+        toggle();
       });
     });
-    if(btns.length) console.log('[FIX] bouton(s) langue branche(s):', btns.length);
-  }
-
-  // Attendre DOM + i18n.js
-  function start(){
-    bind();
-    // Mettre a jour le label du bouton apres changement
-    document.addEventListener('langchange', function(e){
-      var l = (e.detail && e.detail.lang) || 'fr';
+    // Mettre a jour le label du bouton selon la langue active
+    function updateLabel(){
+      var cur = getLang();
+      // Si EN actif, le bouton propose FR (et vice-versa)
       document.querySelectorAll('.lang-toggle .lang-text').forEach(function(el){
-        el.textContent = l === 'fr' ? 'EN' : 'FR';
+        el.textContent = (cur === 'en') ? 'FR' : 'EN';
       });
-    });
+    }
+    updateLabel();
+    document.addEventListener('langchange', function(){ updateLabel(); });
+    document.addEventListener('click', function(){ setTimeout(updateLabel, 50); });
   }
 
   if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', function(){ waitI18n(start); });
-  } else {
-    waitI18n(start);
-  }
+    document.addEventListener('DOMContentLoaded', bind);
+  } else { bind(); }
+
+  // Au chargement complet, forcer l'application de EN si rien de sauve
+  window.addEventListener('load', function(){
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch(e){}
+    if(saved !== 'fr' && saved !== 'en'){
+      setLangSafe('en');
+    }
+  });
 })();
 </script>
 </body>

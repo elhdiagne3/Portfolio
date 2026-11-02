@@ -170,7 +170,7 @@ const translations = {
 };
 
 function getCurrentLang() {
-  return localStorage.getItem('lang') || 'fr';
+  return localStorage.getItem('lang') || 'en';
 }
 
 function setLang(lang) {
@@ -219,3 +219,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Export global pour i18n-global-portfolio
 if (typeof i18n !== 'undefined') { window.i18n = i18n; }
+
+
+// Expose globalement pour le bouton
+if (typeof setLang === 'function') window.setLang = setLang;
+
+if (typeof toggleLang === 'function') window.toggleLang = toggleLang;
+
+// AUTO_INIT_EN_FIX : applique 'en' par defaut, 'fr' si sauvegarde
+(function(){
+  function init(){
+    var saved = null;
+    try { saved = localStorage.getItem('portfolio-lang') || localStorage.getItem('lang'); } catch(e){}
+    var lang = (saved === 'fr' || saved === 'en') ? saved : 'en';  // EN par defaut
+    if(typeof window.setLang === 'function'){ window.setLang(lang); }
+    else if(typeof setLang === 'function'){ setLang(lang); }
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else { init(); }
+})();

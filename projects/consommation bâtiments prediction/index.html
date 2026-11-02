@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consommation Bâtiments — Prédiction</title>
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+  .project-page { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+  .breadcrumb { font-size: 0.9rem; color: #9ca3af; margin-bottom: 1.5rem; }
+  .breadcrumb a { color: #60a5fa; text-decoration: none; }
+  .project-page h1 { font-size: 2rem; margin: 0 0 0.75rem; }
+  .project-lead { color: #d1d5db; font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 800px; line-height: 1.6; }
+  .subgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .subcard { padding: 1.5rem; border: 1px solid rgba(156,163,175,0.25); border-radius: 12px; background: rgba(30,41,59,0.6); transition: all 0.2s; }
+  .subcard:hover { border-color: rgba(96,165,250,0.6); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  .subcard-num { font-size: 0.8rem; font-weight: 700; color: #60a5fa; letter-spacing: 1px; margin-bottom: 0.5rem; }
+  .subcard h3 { font-size: 1.15rem; margin: 0 0 0.5rem; }
+  .subcard p { font-size: 0.9rem; color: #d1d5db; margin: 0 0 1rem; }
+  .subcard-link { color: #60a5fa; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+  .subcard-link:hover { text-decoration: underline; }
+</style>
+<script src="../../js/i18n.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a href="../../index.html" class="logo">Elhadji Diaraff DIAGNE</a>
+    <ul class="nav-links">
+      <li><a href="../../index.html" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="../../projects.html" data-i18n="nav.projects">Projets</a></li>
+      <li><a href="../../cv.html" data-i18n="nav.cv">CV</a></li>
+      <li><a href="../../certifications.html" data-i18n="nav.certification">Certifications</a></li>
+      <li><a href="../../index.html#contact" data-i18n="nav.contact">Contact</a></li>
+      <li><button id="theme-toggle" class="icon-btn" aria-label="Theme">🌙</button></li>
+      <li><button id="lang-toggle" class="icon-btn" aria-label="Switch language">EN</button></li>
+    </ul>
+  </nav>
+</header>
+<main class="project-page">
+  <div class="breadcrumb"><a href="../../projects.html">← Projets</a> · Consommation Bâtiments — Prédiction</div>
+  <h1>Consommation Bâtiments — Prédiction</h1>
+  <p class="project-lead">Prédiction de la consommation énergétique des bâtiments et des émissions de gaz à effet de serre via machine learning. Trois sous-projets : nettoyage des données, prédiction de l'énergie par site, prédiction des émissions GHG.</p>
+  <div class="subgrid">
+
+      <article class="subcard">
+        <div class="subcard-num">01</div>
+        <h3>Nettoyage & Préparation</h3>
+        <p>Nettoyage du dataset, gestion des valeurs manquantes, feature engineering initial.</p>
+        <a href="sous-projet-1.html" class="subcard-link">Ouvrir le sous-projet →</a>
+      </article>
+
+      <article class="subcard">
+        <div class="subcard-num">02</div>
+        <h3>Prédiction Site Energy Use (kBtu)</h3>
+        <p>Modélisation de la consommation énergétique par site (régression supervisée).</p>
+        <a href="sous-projet-2.html" class="subcard-link">Ouvrir le sous-projet →</a>
+      </article>
+
+      <article class="subcard">
+        <div class="subcard-num">03</div>
+        <h3>Prédiction Émissions GHG</h3>
+        <p>Modélisation des émissions totales de gaz à effet de serre (régression).</p>
+        <a href="sous-projet-3.html" class="subcard-link">Ouvrir le sous-projet →</a>
+      </article>
+
+  </div>
+</main>
+<script src="../../js/theme.js" defer></script>
+</body>
+</html>

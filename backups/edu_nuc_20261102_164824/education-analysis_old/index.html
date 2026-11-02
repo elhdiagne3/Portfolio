@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analyse Système Éducatif — Portfolio Elhadji Diaraff DIAGNE</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script id="theme-init">
+(function(){
+  try {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    if(theme === 'dark') document.documentElement.classList.add('dark');
+    else document.documentElement.classList.remove('dark');
+  } catch(e) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+</script>
+<style>
+  .project-page { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+  .breadcrumb { font-size: 0.9rem; color: #6b7280; margin-bottom: 1.5rem; }
+  .breadcrumb a { color: #2563eb; text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .project-page h1 { font-size: 2rem; margin: 0 0 0.75rem; }
+  .project-lead { color: #4b5563; font-size: 1.05rem; margin-bottom: 1rem; max-width: 800px; line-height: 1.6; }
+  .project-stack { display: inline-block; font-size: 0.85rem; color: #2563eb; background: rgba(37,99,235,0.1); padding: 0.35rem 0.8rem; border-radius: 999px; margin-bottom: 2.5rem; }
+  .subgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .subcard { padding: 1.5rem; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; transition: all 0.2s ease; }
+  .subcard:hover { border-color: #3b82f6; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .subcard-num { font-size: 0.8rem; font-weight: 700; color: #2563eb; letter-spacing: 1px; margin-bottom: 0.5rem; }
+  .subcard h3 { font-size: 1.15rem; margin: 0 0 0.5rem; }
+  .subcard p { font-size: 0.9rem; color: #4b5563; margin: 0 0 1rem; line-height: 1.5; }
+  .subcard-link { color: #2563eb; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+  .subcard-link:hover { text-decoration: underline; }
+
+  [data-theme="dark"] .project-lead { color: #d1d5db; }
+  [data-theme="dark"] .project-stack { color: #60a5fa; background: rgba(96,165,250,0.1); }
+  [data-theme="dark"] .subcard { background: rgba(30,41,59,0.6); border-color: rgba(156,163,175,0.25); }
+  [data-theme="dark"] .subcard p { color: #d1d5db; }
+  [data-theme="dark"] .subcard-num { color: #60a5fa; }
+  [data-theme="dark"] .subcard-link { color: #60a5fa; }
+  [data-theme="dark"] .breadcrumb { color: #9ca3af; }
+  [data-theme="dark"] .breadcrumb a { color: #60a5fa; }
+</style>
+<script src="../../js/i18n.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a href="../../index.html" class="logo">Elhadji Diaraff DIAGNE</a>
+    <ul class="nav-links">
+      <li><a href="../../index.html" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="../../projects.html" data-i18n="nav.projects">Projets</a></li>
+      <li><a href="../../cv.html" data-i18n="nav.cv">CV</a></li>
+      <li><a href="../../certifications.html" data-i18n="nav.certification">Certifications</a></li>
+      <li><a href="../../index.html#contact" data-i18n="nav.contact">Contact</a></li>
+      <li><button id="theme-toggle" class="icon-btn" aria-label="Theme">🌙</button></li>
+      <li><button id="lang-toggle" class="icon-btn" aria-label="Switch language">EN</button></li>
+    </ul>
+  </nav>
+</header>
+<main class="project-page">
+  <div class="breadcrumb"><a href="../../projects.html">← Projets</a> · Analyse Système Éducatif</div>
+  <h1>Analyse Système Éducatif</h1>
+  <p class="project-lead">Analyse exploratoire de données éducatives (2019-2022) : tendances et visualisations.</p>
+  <span class="project-stack">Python · Pandas · Matplotlib</span>
+
+  <div class="subgrid">
+    <article class="subcard">
+      <div class="subcard-num">01</div>
+      <h3>Analyse Exploratoire</h3>
+      <p>Notebook complet : exploration des données éducatives, statistiques descriptives et visualisations.</p>
+      <a href="analyse.html" class="subcard-link">Ouvrir l'analyse →</a>
+    </article>
+  </div>
+</main>
+
+<script id="theme-toggle-js">
+(function(){
+  'use strict';
+  function current(){
+    try { var v = localStorage.getItem('theme'); return (v === 'dark') ? 'dark' : 'light'; } catch(e) { return 'light'; }
+  }
+  function apply(t){
+    document.documentElement.setAttribute('data-theme', t);
+    if(t === 'dark') document.documentElement.classList.add('dark');
+    else document.documentElement.classList.remove('dark');
+    document.querySelectorAll('#theme-toggle').forEach(function(b){ b.textContent = (t === 'dark') ? '☀️' : '🌙'; });
+  }
+  function toggle(){
+    var next = (current() === 'dark') ? 'light' : 'dark';
+    try { localStorage.setItem('theme', next); } catch(e){}
+    apply(next);
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('#theme-toggle').forEach(function(b){
+      b.addEventListener('click', function(e){ e.preventDefault(); toggle(); });
+    });
+    apply(current());
+  });
+})();
+</script>
+</body>
+</html>

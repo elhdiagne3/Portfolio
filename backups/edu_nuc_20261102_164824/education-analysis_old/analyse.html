@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analyse Système Éducatif — Portfolio Elhadji Diaraff DIAGNE</title>
+<script id="theme-init">
+(function(){
+  try {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    if(theme === 'dark') document.documentElement.classList.add('dark');
+    else document.documentElement.classList.remove('dark');
+  } catch(e) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; color: #1f2937; margin: 0; padding: 0; line-height: 1.6; }
+
+  .nb-header {
+    max-width: 1200px; margin: 1rem auto; padding: 0.75rem 1rem;
+    background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 0.5rem;
+  }
+  .nb-header a { color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+  .nb-header a:hover { text-decoration: underline; }
+
+  .nb-container { max-width: 1200px; margin: 1rem auto 4rem; padding: 0 1rem; }
+
+  .cell { margin: 1rem 0; }
+  .cell.markdown { color: #1f2937; font-size: 1rem; }
+  .cell.markdown h1, .cell.markdown h2, .cell.markdown h3 { color: #111827; margin: 1rem 0 0.5rem; }
+  .cell.markdown p { margin: 0.6rem 0; }
+  .cell.markdown code { background: #f1f5f9; padding: 0.15rem 0.35rem; border-radius: 4px; color: #be185d; font-size: 0.9em; }
+  .cell.markdown a { color: #2563eb; }
+  .cell.markdown ul, .cell.markdown ol { margin: 0.5rem 0; padding-left: 1.5rem; }
+
+  .cell.code { background: #f8fafc; border-radius: 8px; overflow: hidden; border: 1px solid #e5e7eb; }
+  .cell.code .code-input {
+    margin: 0; padding: 1rem; overflow-x: auto;
+    font-family: Consolas, Monaco, monospace; font-size: 0.9rem;
+    color: #1f2937; background: #f8fafc; white-space: pre;
+  }
+  .cell.code pre, .cell.code code { margin: 0; padding: 0; background: transparent; color: inherit; font-family: inherit; }
+
+  .cell.stream { background: #f9fafb; border-left: 3px solid #94a3b8; padding: 0.75rem 1rem; margin: 0.5rem 0; }
+  .cell.stream pre { margin: 0; font-family: Consolas, monospace; font-size: 0.85rem; color: #374151; white-space: pre-wrap; word-break: break-word; }
+
+  .cell.error { background: #fef2f2; border-left: 3px solid #dc2626; padding: 0.75rem 1rem; }
+  .cell.error pre { margin: 0; color: #991b1b; font-family: Consolas, monospace; font-size: 0.85rem; white-space: pre-wrap; }
+
+  .cell.img { text-align: center; margin: 1rem 0; }
+  .cell.img img, .cell.img svg {
+    max-width: 100%; height: auto; border-radius: 6px;
+    background: #fff; padding: 0.5rem; border: 1px solid #e5e7eb;
+  }
+
+  .cell.html-out { margin: 1rem 0; overflow-x: auto; color: #1f2937; }
+  .cell.html-out table { border-collapse: collapse; margin: 0.5rem 0; font-size: 0.85rem; background: #fff; }
+  .cell.html-out th, .cell.html-out td { border: 1px solid #d1d5db; padding: 0.35rem 0.6rem; }
+  .cell.html-out th { background: #f3f4f6; }
+
+  /* Bouton theme toggle */
+  #theme-toggle-page {
+    background: transparent; border: 1px solid #d1d5db; border-radius: 6px;
+    padding: 0.35rem 0.7rem; cursor: pointer; font-size: 1rem;
+    color: #4b5563;
+  }
+  #theme-toggle-page:hover { background: #f3f4f6; }
+
+  /* Dark mode override */
+  [data-theme="dark"] body { background: #0f172a; color: #e5e7eb; }
+  [data-theme="dark"] .nb-header { background: rgba(30,41,59,0.85); border-color: rgba(156,163,175,0.3); }
+  [data-theme="dark"] .nb-header a { color: #60a5fa; }
+  [data-theme="dark"] .cell.code { background: #1e293b; border-color: rgba(148,163,184,0.15); }
+  [data-theme="dark"] .cell.code .code-input { background: #1e293b; color: #e5e7eb; }
+  [data-theme="dark"] .cell.stream { background: #0f172a; }
+  [data-theme="dark"] .cell.stream pre { color: #cbd5e1; }
+  [data-theme="dark"] .cell.markdown { color: #e5e7eb; }
+  [data-theme="dark"] .cell.markdown h1,
+  [data-theme="dark"] .cell.markdown h2,
+  [data-theme="dark"] .cell.markdown h3 { color: #f3f4f6; }
+  [data-theme="dark"] .cell.html-out { color: #e5e7eb; }
+  [data-theme="dark"] .cell.html-out table { background: #1e293b; color: #e5e7eb; }
+  [data-theme="dark"] .cell.html-out th { background: #334155; }
+  [data-theme="dark"] .cell.html-out th,
+  [data-theme="dark"] .cell.html-out td { border-color: #475569; }
+  [data-theme="dark"] #theme-toggle-page { color: #e5e7eb; border-color: rgba(156,163,175,0.4); }
+</style>
+</head>
+<body>
+
+<div class="nb-header">
+  <a href="../../projects.html">← Retour aux projets</a>
+  <a href="index.html">Vue d'ensemble du projet</a>
+  <button id="theme-toggle-page" type="button" aria-label="Changer le thème">🌙</button>
+</div>
+
+<div class="nb-container">
+
+
+
+</div>
+
+<script id="theme-toggle-js">
+(function(){
+  'use strict';
+  function current(){
+    try { var v = localStorage.getItem('theme'); return (v === 'dark') ? 'dark' : 'light'; } catch(e) { return 'light'; }
+  }
+  function apply(t){
+    document.documentElement.setAttribute('data-theme', t);
+    if(t === 'dark') document.documentElement.classList.add('dark');
+    else document.documentElement.classList.remove('dark');
+    var btns = document.querySelectorAll('#theme-toggle-page');
+    btns.forEach(function(b){ b.textContent = (t === 'dark') ? '☀️' : '🌙'; });
+  }
+  function toggle(){
+    var next = (current() === 'dark') ? 'light' : 'dark';
+    try { localStorage.setItem('theme', next); } catch(e){}
+    apply(next);
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('#theme-toggle-page').forEach(function(b){
+      b.addEventListener('click', function(e){ e.preventDefault(); toggle(); });
+    });
+    apply(current());
+  });
+})();
+</script>
+
+</body>
+</html>

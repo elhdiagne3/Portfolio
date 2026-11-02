@@ -45,6 +45,8 @@ const translations = {
     'cv.download': '⬇ Télécharger en français',
     'cv.preview.fr': 'Aperçu du CV français ↗',
     'footer.contact': 'Contact',
+    'footer.contact_title': 'Contact',
+    'footer.contact_intro': "Discutons de vos projets data, ML ou MLOps.",
     'footer.rights': 'Tous droits réservés'
 
 
@@ -129,6 +131,10 @@ const translations = {
     'cv.download': '⬇ Download (English)',
     'cv.preview.fr': 'Preview (English) ↗',
     'footer.contact': 'Contact',
+    'footer.contact_title': 'Contact',
+    'footer.contact_intro': "Let's talk about your data, ML or MLOps projects.",
+    'footer.contact_title': 'Contact',
+    'footer.contact_intro': "Discutons de vos projets data, ML ou MLOps.",
     'footer.rights': 'All rights reserved'
 
 

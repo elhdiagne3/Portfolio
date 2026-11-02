@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CV — Elhadji Diaraff DIAGNE (fr)</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #1a1a1a; background: #fff; margin: 0; padding: 0;
+    font-size: 10.5pt; line-height: 1.45;
+  }
+  .cv { max-width: 210mm; margin: 0 auto; padding: 8mm; }
+
+  /* HEADER */
+  .cv-header {
+    border-bottom: 2px solid #1e40af;
+    padding-bottom: 10px; margin-bottom: 14px;
+  }
+  .cv-header h1 {
+    font-size: 20pt; margin: 0 0 4px 0; color: #1e3a8a; letter-spacing: 0.3px;
+  }
+  .cv-subtitle {
+    font-size: 11pt; color: #4b5563; margin: 2px 0 6px 0;
+  }
+  .cv-contact {
+    font-size: 9.5pt; color: #374151; margin: 4px 0;
+  }
+  .cv-contact a { color: #1d4ed8; text-decoration: none; }
+  .cv-contact span { margin-right: 14px; }
+
+  /* BADGE RESIDENT PERMANENT */
+  .cv-resident-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 8px; padding: 4px 12px;
+    background: #dcfce7; border: 1px solid #22c55e;
+    border-radius: 999px; font-size: 9.5pt; font-weight: 600;
+    color: #15803d;
+  }
+
+  /* SECTIONS */
+  .cv-section { margin-top: 14px; }
+  .cv-section h2 {
+    font-size: 12pt; color: #1e3a8a; margin: 0 0 6px 0;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    border-bottom: 1px solid #cbd5e1; padding-bottom: 3px;
+  }
+  .cv-section p { margin: 4px 0; font-size: 10pt; color: #1f2937; }
+  .cv-section ul { margin: 4px 0; padding-left: 18px; }
+  .cv-section li { margin: 2px 0; font-size: 10pt; }
+
+  .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; }
+  .cv-skill-cat h3 { font-size: 10pt; color: #374151; margin: 0 0 2px 0; }
+  .cv-skill-cat ul { margin: 0; padding-left: 16px; }
+  .cv-skill-cat li { font-size: 9.5pt; }
+
+  .cv-job { margin-bottom: 8px; }
+  .cv-job-title { font-weight: 600; color: #111827; }
+  .cv-job-meta { font-size: 9pt; color: #6b7280; margin-left: 8px; }
+  .cv-job p { margin: 3px 0 0 0; font-size: 9.5pt; }
+
+  /* Print */
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cv { padding: 0; }
+    .no-print { display: none; }
+  }
+
+  /* Barre d'impression (non imprimee) */
+  .print-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+    background: #1e3a8a; color: #fff; padding: 10px 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  .print-bar button {
+    background: #22c55e; color: #fff; border: none;
+    padding: 8px 16px; border-radius: 6px; font-weight: 600;
+    cursor: pointer; font-size: 13px;
+  }
+  .print-bar button:hover { background: #16a34a; }
+  body { padding-top: 52px; }
+  @media print { body { padding-top: 0; } }
+</style>
+</head>
+<body>
+
+<div class="print-bar no-print">
+  <span>💡 Astuce : Ctrl+P → "Enregistrer au format PDF"</span>
+  <button onclick="window.print()">📥 Télécharger en PDF</button>
+</div>
+
+<div class="cv">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="cv-header">
+    <h1>Elhadji Diaraff DIAGNE</h1>
+    <div class="cv-subtitle">Data Scientist · Fraud Analysis Specialist · ML · NLP · MLOps</div>
+    <div class="cv-contact">
+      <span>📧 <a href="mailto:diagne080894@gmail.com">diagne080894@gmail.com</a></span>
+      <span>🔗 <a href="https://github.com/elhdiagne3">github.com/elhdiagne3</a></span>
+      <span>🌐 <a href="https://elhdiagne3.github.io/Portfolio/">elhdiagne3.github.io/Portfolio</a></span>
+    </div>
+    <!-- BADGE RESIDENT PERMANENT -->
+    <div class="cv-resident-badge">
+      <span>🇨🇦</span>
+      <span>Résident Permanent au Canada</span>
+    </div>
+  </header>
+
+  <!-- ===================== SUMMARY ===================== -->
+  <section class="cv-section">
+    <h2>Résumé technique</h2>
+    <p>Data Scientist orienté production, spécialisé en machine learning supervisé, traitement du langage (NLP) et déploiement de modèles en production. Expérience end-to-end : exploration de données volumineuses, feature engineering, entraînement et évaluation de modèles, monitoring post-déploiement.</p>
+    <p>Maîtrise de Python (Pandas, NumPy, scikit-learn, PyTorch) et SQL (PostgreSQL, BigQuery). Pratique quotidienne de Docker, MLflow, FastAPI et Git pour industrialiser les pipelines. Sensibilité aux contraintes métier : coût d'erreur, latence, interprétabilité.</p>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section class="cv-section">
+    <h2>Stack technique</h2>
+    <div class="cv-grid">
+      <div class="cv-skill-cat"><h3>Langages</h3><ul><li>Python (avancé)</li><li>SQL (avancé)</li><li>R, Bash, Scala, SAS</li><li>JavaScript</li></ul></div>
+      <div class="cv-skill-cat"><h3>Machine Learning & Deep Learning</h3><ul><li>scikit-learn, XGBoost, LightGBM</li><li>TensorFlow, Keras, PyTorch</li><li>Optuna</li></ul></div>
+      <div class="cv-skill-cat"><h3>NLP & LLMs</h3><ul><li>Hugging Face Transformers</li><li>spaCy, NLTK</li><li>LangChain, RAG, Embeddings</li></ul></div>
+      <div class="cv-skill-cat"><h3>Data Engineering</h3><ul><li>Pandas, Polars, NumPy</li><li>PySpark, Airflow, dbt</li></ul></div>
+      <div class="cv-skill-cat"><h3>MLOps & Déploiement</h3><ul><li>MLflow, Docker, FastAPI</li><li>DVC, Git, GitHub Actions</li></ul></div>
+      <div class="cv-skill-cat"><h3>Visualisation & BI</h3><ul><li>Matplotlib, Seaborn, Plotly</li><li>Streamlit, Power BI, Tableau</li></ul></div>
+      <div class="cv-skill-cat"><h3>Bases de données</h3><ul><li>PostgreSQL, MongoDB</li><li>BigQuery, SQLite</li></ul></div>
+      <div class="cv-skill-cat"><h3>Cloud & Infra</h3><ul><li>Azure Databricks, GCP</li><li>AWS (S3, EC2, SageMaker)</li><li>Linux, Nginx</li></ul></div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="cv-section">
+    <h2>Expérience professionnelle</h2>
+    <div class="cv-job">
+      <span class="cv-job-title">Data Scientist — Fraud Analysis</span>
+      <span class="cv-job-meta">2023 – Aujourd'hui</span>
+      <p>Détection de fraude en temps réel sur des flux massifs. Développement de modèles supervisés (XGBoost, LightGBM), feature engineering PySpark, déploiement via FastAPI. Réduction des faux positifs de 35%.</p>
+    </div>
+    <div class="cv-job">
+      <span class="cv-job-title">Data Analyst — SAS / PySpark</span>
+      <span class="cv-job-meta">2021 – 2023</span>
+      <p>Migration de pipelines SAS vers PySpark. Optimisation de requêtes SQL, automatisation de rapports KPI, dashboards Power BI pour les équipes métier.</p>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="cv-section">
+    <h2>Projets phares</h2>
+    <ul>
+      <li><strong>Water Level Forecast</strong> — Modélisation prédictive des niveaux d'eau (R, SQL, Time Series).</li>
+      <li><strong>Segmentation E-commerce</strong> — Segmentation RFM et clustering K-Means des clients e-commerce (Python, scikit-learn).</li>
+      <li><strong>Analyse Système Éducatif</strong> — Analyse exploratoire de données éducatives 2019-2022 (Python, Pandas, Matplotlib).</li>
+      <li><strong>Public Health Dashboard</strong> — Application interactive de suivi des indicateurs de santé publique (Streamlit, Plotly).</li>
+    </ul>
+  </section>
+
+  <!-- ===================== EDUCATION ===================== -->
+  <section class="cv-section">
+    <h2>Formation</h2>
+    <div class="cv-job">
+      <span class="cv-job-title">Master en Data Science / Statistiques</span>
+      <span class="cv-job-meta">Université — 2019-2021</span>
+    </div>
+    <div class="cv-job">
+      <span class="cv-job-title">Licence en Mathématiques Appliquées</span>
+      <span class="cv-job-meta">Université — 2016-2019</span>
+    </div>
+  </section>
+
+  <!-- ===================== LANGUAGES ===================== -->
+  <section class="cv-section">
+    <h2>Langues</h2>
+    <p>Français (natif) · Anglais (professionnel) · Arabe (courant)</p>
+  </section>
+
+</div>
+</body>
+</html>

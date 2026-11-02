@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certifications — Elhadji Diaraff DIAGNE</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .cert-page { max-width:1100px; margin:0 auto; padding:2rem 1rem 4rem; }
+  .cert-page h1 { font-size:2rem; margin-bottom:0.5rem; }
+  .cert-page p.intro { color:#9ca3af; margin-bottom:2rem; }
+  .cert-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem; }
+  .cert-card:hover { transform:translateY(-4px); box-shadow:0 8px 24px rgba(0,0,0,0.35); }
+</style>
+<script src="js/i18n.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">Elhadji Diaraff DIAGNE</a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="projects.html" data-i18n="nav.projects">Projets</a></li>
+      <li><a href="cv.html" data-i18n="nav.cv">CV</a></li>
+      <li><a href="certifications.html" data-i18n="nav.certification">Certifications</a></li>
+      <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+      <li><button id="theme-toggle" class="icon-btn" aria-label="Theme">🌙</button></li>
+      <li><button id="lang-toggle" class="icon-btn" aria-label="Switch language">EN</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="cert-page">
+  <h1 data-i18n="cert.title">Certifications</h1>
+  <p class="intro" data-i18n="cert.intro">Formations validees et certificats professionnels.</p>
+
+  <div class="cert-grid" id="cert-grid">
+    
+<article class="cert-card" style="display:flex;flex-direction:column;background:rgba(30,41,59,0.6);border:1px solid rgba(156,163,175,0.25);border-radius:12px;overflow:hidden;transition:transform 0.2s ease,box-shadow 0.2s ease;max-width:420px;">
+  <a href="https://coursera.org/share/eef7145033ee50e36c241e88da81da5f" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;">
+    <div class="cert-image" style="width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#1e3a8a,#0f172a);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+      <img src="images/certifications/pyspark-customer-churn.png" alt="Machine Learning with PySpark: Customer Churn Analysis - Certificate" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';this.parentElement.innerHTML='&lt;div style=\'padding:2rem;text-align:center;color:#93c5fd;font-weight:600;font-size:1.1rem;\'&gt;Machine Learning with PySpark: Customer Churn Analysis&lt;/div&gt;'">
+    </div>
+    <div class="cert-body" style="padding:1.25rem;">
+      <div class="cert-issuer" style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.5px;color:#60a5fa;font-weight:600;margin-bottom:0.4rem;">Coursera</div>
+      <h3 class="cert-title" style="font-size:1.1rem;margin:0 0 0.6rem 0;color:inherit;line-height:1.35;">Machine Learning with PySpark: Customer Churn Analysis</h3>
+      <span class="cert-link" style="display:inline-flex;align-items:center;gap:0.4rem;color:#60a5fa;font-weight:600;font-size:0.9rem;">Voir le certificat
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </span>
+    </div>
+  </a>
+</article>
+
+  </div>
+</main>
+
+<script src="js/theme.js" defer></script>
+<script id="email-protect">
+(function(){'use strict';function decode(b64){try{return atob(b64)}catch(e){return null}}function bind(){document.querySelectorAll('.email-icon-link').forEach(function(a){if(a.dataset.emailBound==='1')return;a.dataset.emailBound='1';a.addEventListener('click',function(e){e.preventDefault();var b=a.getAttribute('data-email-b64');if(!b)return;var m=decode(b);if(m)window.location.href='mailto:'+m})})}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',bind)}else{bind()}window.addEventListener('load',bind)})();
+</script>
+</body>
+</html>

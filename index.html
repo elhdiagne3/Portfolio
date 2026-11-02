@@ -24,112 +24,38 @@
   <meta name="description" content="Elhadji Diaraff DIAGNE — Data Scientist. ML, NLP, MLOps, Data Engineering.">
   <title>Elhadji Diaraff DIAGNE — Data Scientist</title>
   <link rel="stylesheet" href="css/style.css">
-<style id="lang-icon-fix">
-/* Icone langue TOUJOURS visible */
-.lang-toggle,
-.lang-switcher,
-#langToggle,
-#lang-switcher,
-.language-selector,
-button[aria-label*="lang" i],
-button[title*="lang" i] {
-    display: inline-flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    z-index: 9999 !important;
-    position: relative !important;
-    pointer-events: auto !important;
+<style id="site-fix-2026">
+/* Bouton langue - style gris comme Contact */
+.lang-toggle{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:0.35rem; padding:0.4rem 0.85rem;
+  background:transparent; border:1px solid rgba(156,163,175,0.35);
+  border-radius:8px; color:#9ca3af;
+  font-weight:600; font-size:0.9rem; cursor:pointer;
+  transition:all 0.2s ease; margin-left:0.5rem;
+  font-family:inherit;
 }
-/* Forcer la visibilite dans le header/navbar */
-header .lang-toggle,
-nav .lang-toggle,
-.navbar .lang-toggle {
-    color: inherit !important;
-}
-</style>
-<style id="lang-grey-fix">
-/* Icone langue : meme couleur que Contact (grise) */
-.lang-toggle,
-.lang-switcher,
-#langToggle,
-#lang-switcher,
-.language-selector,
-button[aria-label*="lang" i],
-button[title*="lang" i],
-.lang-toggle svg,
-.lang-switcher svg {
-    color: #9ca3af !important;
-    stroke: #9ca3af !important;
-    fill: none !important;
-    display: inline-flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    z-index: 9999 !important;
-    position: relative !important;
-    pointer-events: auto !important;
-    transition: color 0.2s ease, stroke 0.2s ease;
-}
-.lang-toggle:hover,
-.lang-switcher:hover,
-#langToggle:hover,
-#lang-switcher:hover,
-.language-selector:hover,
-.lang-toggle:hover svg,
-.lang-switcher:hover svg {
-    color: #e5e7eb !important;
-    stroke: #e5e7eb !important;
-}
-/* Aligner verticalement avec le bouton Contact */
-header .lang-toggle,
-nav .lang-toggle,
-.navbar .lang-toggle,
-header .lang-switcher,
-nav .lang-switcher {
-    vertical-align: middle !important;
-    margin-left: 0.5rem;
-}
-</style>
-<style id="lang-email-nuclear-css">
-/* ---- BOUTON LANGUE : gris visible, comme Contact ---- */
-.lang-toggle,.lang-switcher,#langToggle,#lang-switcher,
-.language-selector,.lang-btn,#langBtn,.btn-lang,
-[data-action="toggle-lang"],button[aria-label*="lang" i]{
-  color:#9ca3af !important;
-  stroke:#9ca3af !important;
-  display:inline-flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  visibility:visible !important;
-  opacity:1 !important;
-  z-index:9999 !important;
-  position:relative !important;
-  pointer-events:auto !important;
-  cursor:pointer !important;
-  vertical-align:middle !important;
-  margin-left:0.5rem !important;
-}
-.lang-toggle:hover,.lang-switcher:hover,#langToggle:hover,#langBtn:hover{
-  color:#e5e7eb !important;
-  stroke:#e5e7eb !important;
-}
-.lang-toggle svg,.lang-switcher svg,#langToggle svg{
-  stroke:#9ca3af !important;
-  fill:none !important;
-}
+.lang-toggle:hover{ color:#e5e7eb; border-color:#e5e7eb; background:rgba(229,231,235,0.05); }
+.lang-toggle:focus{ outline:2px solid #60a5fa; outline-offset:2px; }
+.lang-toggle svg{ width:16px; height:16px; stroke:currentColor; fill:none; }
 
-/* ---- EMAIL : toujours lisible ---- */
-.cv-email,.email,a[href^="mailto:"],[class*="email"],[id*="email"]{
-  color:#60a5fa !important;
-  font-weight:600 !important;
-  font-size:1.05rem !important;
-  text-decoration:underline !important;
-  text-underline-offset:3px !important;
-  opacity:1 !important;
-  visibility:visible !important;
-  display:inline-block !important;
-  letter-spacing:0.3px !important;
+/* Email CV lisible */
+.cv-email, a[href^="mailto:"]{
+  color:#60a5fa !important; font-weight:600 !important;
+  text-decoration:underline !important; text-underline-offset:3px !important;
+  opacity:1 !important; visibility:visible !important;
 }
 a[href^="mailto:"]:hover{ color:#93c5fd !important; }
+
+/* Badge Resident Permanent */
+.cv-resident-badge{
+  display:inline-flex; align-items:center; gap:0.5rem;
+  margin:0.75rem 0; padding:0.4rem 0.9rem;
+  background:rgba(34,197,94,0.12);
+  border:1px solid rgba(34,197,94,0.4);
+  border-radius:999px; font-size:0.9rem; font-weight:600;
+  color:#22c55e;
+}
 </style>
 </head>
 <body>
@@ -148,6 +74,14 @@ a[href^="mailto:"]:hover{ color:#93c5fd !important; }
       <li><button id="lang-toggle" class="icon-btn" aria-label="Switch language">EN</button></li>
     </ul>
   </nav>
+
+  <button type="button" class="lang-toggle" aria-label="Changer la langue / Switch language" title="Changer la langue">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="12" r="9" stroke-width="1.8"/>
+    <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" stroke-width="1.5" fill="none"/>
+  </svg>
+  <span class="lang-text">EN</span>
+</button>
 </header>
 
 <main>
@@ -357,122 +291,69 @@ a[href^="mailto:"]:hover{ color:#93c5fd !important; }
 
 
 
-<script id="lang-nuclear-fix">
+<script id="site-fix-js-2026">
 (function(){
   'use strict';
-  var KEY = 'portfolio-lang';
-  var DEBUG = true;
-  function log(){ if(DEBUG) console.log.apply(console, ['[LANG]'].concat([].slice.call(arguments))); }
-
-  // Recuperer la langue
-  function getLang(){
-    try { var v = localStorage.getItem(KEY); if(v==='fr'||v==='en') return v; } catch(e){}
-    return 'fr';
-  }
-  function setLang(l){
-    if(l!=='fr'&&l!=='en') l='fr';
-    try { localStorage.setItem(KEY, l); } catch(e){}
-    apply(l);
-  }
-  window.setLang = setLang;
-  window.toggleLang = function(){ var cur=getLang(); log('toggle', cur, '->', cur==='fr'?'en':'fr'); setLang(cur==='fr'?'en':'fr'); };
-
-  // Chercher le dictionnaire de traductions de facon agressive
-  function getDict(lang){
-    var sources = [window.i18n, window.translations, window.LANG, window.messages];
-    // Variable globale directe 'i18n'
-    try { if(typeof i18n !== 'undefined') sources.push(i18n); } catch(e){}
-    try { if(typeof translations !== 'undefined') sources.push(translations); } catch(e){}
-    for(var i=0;i<sources.length;i++){
-      var s = sources[i];
-      if(s && s[lang] && typeof s[lang]==='object') return s[lang];
+  // Attendre que i18n.js soit charge (il definit window.setLang normalement)
+  // mais s'il ne le fait pas, on expose nous-memes.
+  function waitI18n(cb, tries){
+    tries = tries || 0;
+    // Verifier qu'on a bien un setLang accessible
+    if(typeof window.setLang === 'function' || typeof setLang === 'function' || tries > 20){
+      cb();
+    } else {
+      setTimeout(function(){ waitI18n(cb, tries+1); }, 50);
     }
-    return null;
   }
 
-  // Appliquer la langue
-  function apply(lang){
-    log('apply', lang);
-    document.documentElement.lang = lang;
-    if(document.body) document.body.setAttribute('data-lang', lang);
+  function doToggle(){
+    // Priorite 1 : window.toggleLang (injecte par i18n.js)
+    if(typeof window.toggleLang === 'function'){
+      window.toggleLang();
+      return;
+    }
+    // Priorite 2 : toggleLang global (portee script classique)
+    try { if(typeof toggleLang === 'function'){ toggleLang(); return; } } catch(e){}
+    // Priorite 3 : setLang avec l'inverse de la langue courante
+    var cur = 'fr';
+    try { cur = localStorage.getItem('portfolio-lang') || localStorage.getItem('lang') || 'fr'; } catch(e){}
+    var next = (cur === 'fr') ? 'en' : 'fr';
+    if(typeof window.setLang === 'function'){ window.setLang(next); return; }
+    try { if(typeof setLang === 'function'){ setLang(next); return; } } catch(e){}
+    console.warn('[FIX] Aucune fonction de changement de langue accessible. Verifiez js/i18n.js');
+  }
 
-    var dict = getDict(lang);
-    if(!dict){ console.warn('[LANG] Aucun dictionnaire trouve pour', lang, '- verifiez js/i18n.js'); }
-    var n = 0;
-
-    // [data-i18n] -> textContent
-    document.querySelectorAll('[data-i18n]').forEach(function(el){
-      var k = el.getAttribute('data-i18n');
-      if(dict && dict[k]!==undefined){
-        if(el.tagName==='INPUT'||el.tagName==='TEXTAREA') el.placeholder = dict[k];
-        else if(el.tagName==='IMG') el.alt = dict[k];
-        else el.textContent = dict[k];
-        n++;
-      }
-    });
-
-    // Attributs
-    var amap = {'data-i18n-placeholder':'placeholder','data-i18n-title':'title','data-i18n-aria-label':'aria-label','data-i18n-alt':'alt'};
-    Object.keys(amap).forEach(function(da){
-      document.querySelectorAll('['+da+']').forEach(function(el){
-        var k = el.getAttribute(da);
-        if(dict && dict[k]!==undefined){ el.setAttribute(amap[da], dict[k]); n++; }
+  function bind(){
+    var btns = document.querySelectorAll('.lang-toggle');
+    btns.forEach(function(b){
+      if(b.dataset.fixBound === '1') return;
+      b.dataset.fixBound = '1';
+      b.addEventListener('click', function(e){
+        e.preventDefault(); e.stopPropagation();
+        console.log('[FIX] clic bouton langue -> toggle');
+        doToggle();
       });
     });
-
-    log('traduits:', n, '/ total data-i18n:', document.querySelectorAll('[data-i18n]').length);
-
-    // Label bouton
-    document.querySelectorAll('.lang-label,#langLabel,.lang-toggle .label').forEach(function(el){
-      el.textContent = lang.toUpperCase();
-    });
-    document.dispatchEvent(new CustomEvent('langchange',{detail:{lang:lang}}));
+    if(btns.length) console.log('[FIX] bouton(s) langue branche(s):', btns.length);
   }
 
-  // Attacher le clic — TRES LARGE : tout ce qui ressemble a un bouton langue
-  function bind(){
-    var sel = [
-      '.lang-toggle','#langToggle','.lang-switcher','#lang-switcher',
-      '.language-selector','#languageSelector','[data-action="toggle-lang"]',
-      '[data-lang-toggle]','#langBtn','.lang-btn','#lang-btn','.btn-lang',
-      'button[aria-label*="lang" i]','button[title*="lang" i]',
-      'a[aria-label*="lang" i]','a[title*="lang" i]',
-      '[onclick*="Lang"]','[onclick*="lang"]'
-    ];
-    var total = 0;
-    var seen = new Set();
-    sel.forEach(function(s){
-      try {
-        document.querySelectorAll(s).forEach(function(btn){
-          if(seen.has(btn)) return;
-          seen.add(btn);
-          if(btn.dataset.langBound==='1') return;
-          btn.dataset.langBound='1';
-          // Forcer la visibilite
-          btn.style.display = btn.style.display || 'inline-flex';
-          btn.style.visibility = 'visible';
-          btn.style.opacity = '1';
-          btn.style.pointerEvents = 'auto';
-          btn.addEventListener('click', function(e){
-            e.preventDefault(); e.stopPropagation();
-            log('CLIC bouton', btn);
-            window.toggleLang();
-          }, true);
-          total++;
-        });
-      } catch(e){}
+  // Attendre DOM + i18n.js
+  function start(){
+    bind();
+    // Mettre a jour le label du bouton apres changement
+    document.addEventListener('langchange', function(e){
+      var l = (e.detail && e.detail.lang) || 'fr';
+      document.querySelectorAll('.lang-toggle .lang-text').forEach(function(el){
+        el.textContent = l === 'fr' ? 'EN' : 'FR';
+      });
     });
-    log('boutons langue attaches:', total);
-    if(total===0){
-      console.warn('[LANG] AUCUN bouton langue detecte. Ajoutez class="lang-toggle" a votre bouton.');
-    }
   }
 
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', function(){ bind(); apply(getLang()); });
-  else { bind(); apply(getLang()); }
-
-  // Rebind apres chargement complet (au cas ou d'autres scripts remplacent le DOM)
-  window.addEventListener('load', function(){ bind(); });
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){ waitI18n(start); });
+  } else {
+    waitI18n(start);
+  }
 })();
 </script>
 </body>

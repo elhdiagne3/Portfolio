@@ -170,11 +170,13 @@ const translations = {
 };
 
 function getCurrentLang() {
-  return localStorage.getItem('lang') || 'en';
+  var v = null;
+  try { v = localStorage.getItem('portfolio-lang'); } catch(e) {}
+  return (v === 'fr' || v === 'en') ? v : 'en';  // EN PAR DEFAUT
 }
 
 function setLang(lang) {
-  localStorage.setItem('lang', lang);
+  localStorage.setItem('portfolio-lang', lang);
   document.documentElement.lang = lang;
   applyTranslations(lang);
 }
@@ -210,32 +212,33 @@ function toggleLang() {
   setLang(getCurrentLang() === 'fr' ? 'en' : 'fr');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  setLang(getCurrentLang());
-  const btn = document.getElementById('lang-toggle');
-  if (btn) btn.addEventListener('click', toggleLang);
-});
 
-
-// Export global pour i18n-global-portfolio
-if (typeof i18n !== 'undefined') { window.i18n = i18n; }
-
-
-// Expose globalement pour le bouton
-if (typeof setLang === 'function') window.setLang = setLang;
-
-if (typeof toggleLang === 'function') window.toggleLang = toggleLang;
-
-// AUTO_INIT_EN_FIX : applique 'en' par defaut, 'fr' si sauvegarde
+// ============ INIT UNIQUE (remplace tous les anciens handlers) ============
 (function(){
+  'use strict';
   function init(){
-    var saved = null;
-    try { saved = localStorage.getItem('portfolio-lang') || localStorage.getItem('lang'); } catch(e){}
-    var lang = (saved === 'fr' || saved === 'en') ? saved : 'en';  // EN par defaut
-    if(typeof window.setLang === 'function'){ window.setLang(lang); }
-    else if(typeof setLang === 'function'){ setLang(lang); }
+    var lang = getCurrentLang();          // 'en' par defaut
+    setLang(lang);                        // applique + stocke
+
+    var btn = document.getElementById('lang-toggle');
+    if (btn && btn.dataset.i18nBound !== '1') {
+      btn.dataset.i18nBound = '1';
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        toggleLang();
+      });
+    }
   }
-  if(document.readyState === 'loading'){
+
+  // Exposer pour usage externe
+  window.setLang = setLang;
+  window.toggleLang = toggleLang;
+  window.getCurrentLang = getCurrentLang;
+  window.translations = translations;
+
+  if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
-  } else { init(); }
+  } else {
+    init();
+  }
 })();

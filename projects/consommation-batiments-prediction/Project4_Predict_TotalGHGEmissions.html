@@ -1,40 +1,62 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
+<script id="theme-init">
+(function(){
+  try {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    if(theme === 'dark') document.documentElement.classList.add('dark');
+    else document.documentElement.classList.remove('dark');
+  } catch(e) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Project4_Predict_TotalGHGEmissions — Consommation Bâtiments</title>
 <style>
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #0f172a; color: #e5e7eb; margin: 0; padding: 0; line-height: 1.55; }
-  .nb-header { max-width: 1200px; margin: 1rem auto; padding: 0.75rem 1rem; background: rgba(30,41,59,0.85); border: 1px solid rgba(156,163,175,0.3); border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
-  .nb-header a { color: #60a5fa; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; color: #1f2937; margin: 0; padding: 0; line-height: 1.6; }
+  .nb-header { max-width: 1200px; margin: 1rem auto; padding: 0.75rem 1rem; background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+  .nb-header a { color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
   .nb-header a:hover { text-decoration: underline; }
   .nb-container { max-width: 1200px; margin: 1rem auto 4rem; padding: 0 1rem; }
   .cell { margin: 1rem 0; }
-  .cell.markdown { font-size: 1rem; }
-  .cell.markdown h1, .cell.markdown h2, .cell.markdown h3 { color: #f3f4f6; margin: 1rem 0 0.5rem; }
+  .cell.markdown { font-size: 1rem; color: #1f2937; }
+  .cell.markdown h1, .cell.markdown h2, .cell.markdown h3 { color: #111827; margin: 1rem 0 0.5rem; }
   .cell.markdown p { margin: 0.6rem 0; }
-  .cell.markdown code { background: #1e293b; padding: 0.15rem 0.35rem; border-radius: 4px; font-size: 0.9em; }
-  .cell.markdown a { color: #60a5fa; }
-  .cell.code { background: #1e293b; border-radius: 8px; overflow: hidden; border: 1px solid rgba(148,163,184,0.15); }
-  .cell.code .code-input { margin: 0; padding: 1rem; overflow-x: auto; font-family: Consolas, Monaco, monospace; font-size: 0.9rem; color: #e5e7eb; background: #1e293b; white-space: pre; }
-  .cell.stream { background: #0f172a; border-left: 3px solid #64748b; padding: 0.75rem 1rem; margin: 0.5rem 0; }
-  .cell.stream pre { margin: 0; font-family: Consolas, monospace; font-size: 0.85rem; color: #cbd5e1; white-space: pre-wrap; word-break: break-word; }
-  .cell.error { background: #3b0a0a; border-left: 3px solid #ef4444; padding: 0.75rem 1rem; }
-  .cell.error pre { margin: 0; color: #fca5a5; font-family: Consolas, monospace; font-size: 0.85rem; white-space: pre-wrap; }
+  .cell.markdown code { background: #f1f5f9; padding: 0.15rem 0.35rem; border-radius: 4px; font-size: 0.9em; color: #be185d; }
+  .cell.markdown a { color: #2563eb; }
+  .cell.code { background: #f8fafc; border-radius: 8px; overflow: hidden; border: 1px solid #e5e7eb; }
+  .cell.code .code-input { margin: 0; padding: 1rem; overflow-x: auto; font-family: Consolas, Monaco, monospace; font-size: 0.9rem; color: #1f2937; background: #f8fafc; white-space: pre; }
+  .cell.stream { background: #f9fafb; border-left: 3px solid #94a3b8; padding: 0.75rem 1rem; margin: 0.5rem 0; }
+  .cell.stream pre { margin: 0; font-family: Consolas, monospace; font-size: 0.85rem; color: #374151; white-space: pre-wrap; word-break: break-word; }
+  .cell.error { background: #fef2f2; border-left: 3px solid #dc2626; padding: 0.75rem 1rem; }
+  .cell.error pre { margin: 0; color: #991b1b; font-family: Consolas, monospace; font-size: 0.85rem; white-space: pre-wrap; }
   .cell.img { text-align: center; margin: 1rem 0; }
-  .cell.img img { max-width: 100%; height: auto; border-radius: 6px; background: #fff; padding: 0.5rem; }
-  .cell.html-out { margin: 1rem 0; overflow-x: auto; color: #1a1a1a; }
-  .cell.html-out table { border-collapse: collapse; margin: 0.5rem 0; font-size: 0.85rem; background: #f8fafc; color: #111; }
-  .cell.html-out th, .cell.html-out td { border: 1px solid #cbd5e1; padding: 0.35rem 0.6rem; }
-  .cell.html-out th { background: #e2e8f0; }
+  .cell.img img, .cell.img svg { max-width: 100%; height: auto; border-radius: 6px; background: #fff; padding: 0.5rem; border: 1px solid #e5e7eb; }
+  .cell.html-out { margin: 1rem 0; overflow-x: auto; color: #1f2937; }
+  .cell.html-out table { border-collapse: collapse; margin: 0.5rem 0; font-size: 0.85rem; background: #ffffff; color: #1f2937; }
+  .cell.html-out th, .cell.html-out td { border: 1px solid #d1d5db; padding: 0.35rem 0.6rem; }
+  .cell.html-out th { background: #f3f4f6; }
+  /* Dark mode override si l'utilisateur bascule */
+  [data-theme="dark"] body { background: #0f172a; color: #e5e7eb; }
+  [data-theme="dark"] .nb-header { background: rgba(30,41,59,0.85); border-color: rgba(156,163,175,0.3); }
+  [data-theme="dark"] .cell.code { background: #1e293b; border-color: rgba(148,163,184,0.15); }
+  [data-theme="dark"] .cell.code .code-input { background: #1e293b; color: #e5e7eb; }
+  [data-theme="dark"] .cell.stream { background: #0f172a; }
+  [data-theme="dark"] .cell.stream pre { color: #cbd5e1; }
+  [data-theme="dark"] .cell.markdown { color: #e5e7eb; }
+  [data-theme="dark"] .cell.markdown h1, [data-theme="dark"] .cell.markdown h2, [data-theme="dark"] .cell.markdown h3 { color: #f3f4f6; }
 </style>
 <script src="../../js/i18n.js" defer></script>
 </head>
 <body>
 <div class="nb-header">
   <a href="../../projects.html">← Retour aux projets</a>
-  <a href="index.html">Vue d'ensemble du projet</a>
+  <a href="index.html">Vue d'ensemble du projet</a> <button id="theme-toggle-page" style="background:transparent;border:1px solid #d1d5db;border-radius:6px;padding:0.35rem 0.7rem;cursor:pointer;font-size:1rem;">🌙</button>
 </div>
 <div class="nb-container">
 <div class="cell code"><pre class="code-input"><code>import pandas as pd
@@ -3529,5 +3551,44 @@ distance_km: 0.60%
 </pre></div>
 <div class="cell markdown"><p><h3>Le niveau d'importance de EnergyStarScore dans l'ajustement du modèle est de 2,08% </h3></p></div>
 </div>
+<script id="theme-toggle-script">
+(function(){
+  'use strict';
+  function applyTheme(t){
+    document.documentElement.setAttribute('data-theme', t);
+    if(t === 'dark') document.documentElement.classList.add('dark');
+    else document.documentElement.classList.remove('dark');
+    document.querySelectorAll('#theme-toggle, #theme-toggle-page').forEach(function(b){
+      b.textContent = (t === 'dark') ? '☀️' : '🌙';
+    });
+  }
+  function current(){
+    try {
+      var v = localStorage.getItem('theme');
+      return (v === 'dark') ? 'dark' : 'light';
+    } catch(e){ return 'light'; }
+  }
+  function toggle(){
+    var next = (current() === 'dark') ? 'light' : 'dark';
+    try { localStorage.setItem('theme', next); } catch(e){}
+    applyTheme(next);
+  }
+  window.toggleTheme = toggle;
+  function bind(){
+    document.querySelectorAll('#theme-toggle, #theme-toggle-page').forEach(function(b){
+      if(b.dataset.bound === '1') return;
+      b.dataset.bound = '1';
+      b.addEventListener('click', function(e){
+        e.preventDefault();
+        toggle();
+      });
+    });
+    applyTheme(current());
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', bind);
+  } else { bind(); }
+})();
+</script>
 </body>
 </html>

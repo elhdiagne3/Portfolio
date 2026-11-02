@@ -6,7 +6,7 @@
 (function() {
     try {
         var saved = localStorage.getItem('theme');
-        var theme = saved || 'dark';   // DARK PAR DEFAUT DARK_PAR_DEFAUT_PORTFOLIO
+        var theme = saved || 'light';   // DARK PAR DEFAUT DARK_PAR_DEFAUT_PORTFOLIO
         document.documentElement.setAttribute('data-theme', theme);
         if (theme === 'dark') {
             document.documentElement.classList.add('dark');
@@ -14,8 +14,8 @@
             document.documentElement.classList.remove('dark');
         }
     } catch(e) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        document.documentElement.classList.add('dark');
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.documentElement.classList.add('light');
     }
 })();
 </script>
@@ -252,32 +252,39 @@ a[href^="mailto:"]:hover{ color:#93c5fd !important; }
 
 <div class="project-grid" style="max-width: 1100px; margin: 0 auto; justify-content: center; gap: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
       
-      <article class="project-card">
+            <article class="project-card">
         <h3>Water Level Forecast</h3>
-        <p>Modelisation predictive des niveaux d'eau et visualisation interactive des series temporelles.</p>
+        <p>Modélisation prédictive des niveaux d'eau et visualisation interactive des séries temporelles.</p>
         <p class="stack">R · SQL · Time Series</p>
-        <a href="https://elhdiagne3.github.io/WaterLevel-Forecast/" target="_blank" rel="noopener">Voir les resultats →</a>
+        <a href="https://elhdiagne3.github.io/WaterLevel-Forecast/" target="_blank" rel="noopener">Voir le projet →</a>
       </article>
 
       <article class="project-card">
         <h3>Segmentation E-commerce</h3>
         <p>Segmentation RFM et clustering K-Means des clients e-commerce pour optimiser le marketing.</p>
-        <p class="stack">Python · scikit-learn · K-Means</p>
-        <a href="projects/ecommerce-segmentation.html">Voir les resultats →</a>
+        <p class="stack">Python · scikit-learn · K-Means · Pandas</p>
+        <a href="projects/ecommerce-segmentation/index.html">Voir le projet →</a>
       </article>
 
       <article class="project-card">
-        <h3>Analyse Systeme Educatif</h3>
-        <p>Analyse exploratoire de donnees educatives (2019-2022) : tendances et visualisations.</p>
+        <h3>Analyse Système Éducatif</h3>
+        <p>Analyse exploratoire de données éducatives (2019-2022) : tendances et visualisations.</p>
         <p class="stack">Python · Pandas · Matplotlib</p>
-        <a href="projects/education-analysis.html" target="_blank" rel="noopener">Voir les resultats →</a>
+        <a href="projects/education-analysis/index.html">Voir le projet →</a>
       </article>
 
       <article class="project-card">
         <h3>Public Health Dashboard</h3>
-        <p>Application interactive de suivi des indicateurs de sante publique avec visualisations temps reel.</p>
+        <p>Application interactive de suivi des indicateurs de santé publique avec visualisations temps réel.</p>
         <p class="stack">Python · Streamlit · Plotly · Pandas</p>
-        <a href="projects/public-health.html">Voir les resultats →</a>
+        <a href="projects/public-health/index.html">Voir le projet →</a>
+      </article>
+
+      <article class="project-card">
+        <h3>Consommation Bâtiments — Prédiction</h3>
+        <p>Prédiction de la consommation énergétique des bâtiments et des émissions de gaz à effet de serre via machine learning.</p>
+        <p class="stack">Python · scikit-learn · Pandas · Jupyter</p>
+        <a href="projects/consommation-batiments-prediction/index.html">Voir le projet →</a>
       </article>
 
     </div>

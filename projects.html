@@ -5,17 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projets — Portfolio Elhadji Diaraff DIAGNE</title>
 <link rel="stylesheet" href="css/style.css">
+<script id="theme-init">
+(function(){
+  try {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    if(theme === 'dark') document.documentElement.classList.add('dark');
+    else document.documentElement.classList.remove('dark');
+  } catch(e) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+</script>
 <style>
   .projects-page { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 4rem; }
   .projects-page h1 { font-size: 2rem; margin: 0 0 0.75rem; }
-  .projects-page .lead { color: #d1d5db; font-size: 1.05rem; margin-bottom: 2.5rem; }
+  .projects-page .lead { color: #6b7280; font-size: 1.05rem; margin-bottom: 2.5rem; }
+  [data-theme="dark"] .projects-page .lead { color: #9ca3af; }
   .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-  .project-card { padding: 1.5rem; border: 1px solid rgba(156,163,175,0.25); border-radius: 12px; background: rgba(30,41,59,0.6); transition: all 0.2s ease; }
-  .project-card:hover { border-color: rgba(96,165,250,0.6); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  .project-card { padding: 1.5rem; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; transition: all 0.2s ease; }
+  [data-theme="dark"] .project-card { background: rgba(30,41,59,0.6); border-color: rgba(156,163,175,0.25); }
+  .project-card:hover { border-color: #3b82f6; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
   .project-card h3 { font-size: 1.15rem; margin: 0 0 0.5rem; }
-  .project-card p { font-size: 0.9rem; color: #d1d5db; margin: 0 0 0.5rem; line-height: 1.5; }
-  .project-card .stack { font-size: 0.8rem; color: #60a5fa; margin-bottom: 1rem; }
-  .project-card a { color: #60a5fa; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+  .project-card p { font-size: 0.9rem; color: #4b5563; margin: 0 0 0.5rem; line-height: 1.5; }
+  [data-theme="dark"] .project-card p { color: #d1d5db; }
+  .project-card .stack { font-size: 0.8rem; color: #2563eb; margin-bottom: 1rem; }
+  [data-theme="dark"] .project-card .stack { color: #60a5fa; }
+  .project-card a { color: #2563eb; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+  [data-theme="dark"] .project-card a { color: #60a5fa; }
   .project-card a:hover { text-decoration: underline; }
 </style>
 <script src="js/i18n.js" defer></script>
@@ -39,24 +57,42 @@
   <h1 data-i18n="projects.title">Mes projets</h1>
   <p class="lead" data-i18n="projects.intro">Une sélection de projets data science, machine learning et data engineering.</p>
   <div class="project-grid">
+
       <article class="project-card">
-        <h3>Consommation Bâtiments — Prédiction</h3>
-        <p>Prédiction de la consommation énergétique des bâtiments et des émissions de gaz à effet de serre via machine learning.</p>
-        <p class="stack">Python · scikit-learn · Pandas · Jupyter</p>
-        <a href="projects/consommation-batiments-prediction/index.html">Voir le projet →</a>
+        <h3>Water Level Forecast</h3>
+        <p>Modélisation prédictive des niveaux d'eau et visualisation interactive des séries temporelles.</p>
+        <p class="stack">R · SQL · Time Series</p>
+        <a href="https://elhdiagne3.github.io/WaterLevel-Forecast/" target="_blank" rel="noopener">Voir le projet →</a>
       </article>
+
       <article class="project-card">
         <h3>Segmentation E-commerce</h3>
         <p>Segmentation RFM et clustering K-Means des clients e-commerce pour optimiser le marketing.</p>
         <p class="stack">Python · scikit-learn · K-Means · Pandas</p>
         <a href="projects/ecommerce-segmentation/index.html">Voir le projet →</a>
       </article>
+
+      <article class="project-card">
+        <h3>Analyse Système Éducatif</h3>
+        <p>Analyse exploratoire de données éducatives (2019-2022) : tendances et visualisations.</p>
+        <p class="stack">Python · Pandas · Matplotlib</p>
+        <a href="projects/education-analysis/index.html">Voir le projet →</a>
+      </article>
+
       <article class="project-card">
         <h3>Public Health Dashboard</h3>
-        <p>Analyse et visualisation des indicateurs de santé publique.</p>
+        <p>Application interactive de suivi des indicateurs de santé publique avec visualisations temps réel.</p>
         <p class="stack">Python · Streamlit · Plotly · Pandas</p>
         <a href="projects/public-health/index.html">Voir le projet →</a>
       </article>
+
+      <article class="project-card">
+        <h3>Consommation Bâtiments — Prédiction</h3>
+        <p>Prédiction de la consommation énergétique des bâtiments et des émissions de gaz à effet de serre via machine learning.</p>
+        <p class="stack">Python · scikit-learn · Pandas · Jupyter</p>
+        <a href="projects/consommation-batiments-prediction/index.html">Voir le projet →</a>
+      </article>
+
   </div>
 </main>
 <script src="js/theme.js" defer></script>

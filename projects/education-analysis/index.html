@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analyse Système Éducatif — Portfolio Elhadji Diaraff DIAGNE</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script id="theme-init">
+(function(){
+  try {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    if(theme === 'dark') document.documentElement.classList.add('dark');
+    else document.documentElement.classList.remove('dark');
+  } catch(e) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+</script>
+<style>
+  .project-page { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+  .breadcrumb { font-size: 0.9rem; color: #6b7280; margin-bottom: 1.5rem; }
+  .breadcrumb a { color: #2563eb; text-decoration: none; }
+  .project-page h1 { font-size: 2rem; margin: 0 0 0.75rem; }
+  .project-lead { color: #4b5563; font-size: 1.05rem; margin-bottom: 1rem; max-width: 800px; line-height: 1.6; }
+  .project-stack { display: inline-block; font-size: 0.85rem; color: #2563eb; background: rgba(37,99,235,0.1); padding: 0.35rem 0.8rem; border-radius: 999px; margin-bottom: 2.5rem; }
+  .external-link-box { padding: 2rem; border: 1px dashed #cbd5e1; border-radius: 12px; text-align: center; max-width: 600px; }
+  .external-btn { display: inline-block; padding: 0.75rem 1.5rem; background: #2563eb; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; transition: background 0.2s; }
+  .external-btn:hover { background: #1d4ed8; }
+  [data-theme="dark"] .project-lead { color: #d1d5db; }
+  [data-theme="dark"] .project-stack { color: #60a5fa; background: rgba(96,165,250,0.1); }
+  [data-theme="dark"] .external-link-box { border-color: rgba(156,163,175,0.3); }
+  [data-theme="dark"] .external-link-box p { color: #d1d5db !important; }
+</style>
+<script src="../../js/i18n.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a href="../../index.html" class="logo">Elhadji Diaraff DIAGNE</a>
+    <ul class="nav-links">
+      <li><a href="../../index.html" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="../../projects.html" data-i18n="nav.projects">Projets</a></li>
+      <li><a href="../../cv.html" data-i18n="nav.cv">CV</a></li>
+      <li><a href="../../certifications.html" data-i18n="nav.certification">Certifications</a></li>
+      <li><a href="../../index.html#contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main class="project-page">
+  <div class="breadcrumb"><a href="../../projects.html">← Projets</a> · Analyse Système Éducatif</div>
+  <h1>Analyse Système Éducatif</h1>
+  <p class="project-lead">Analyse exploratoire de données éducatives (2019-2022) : tendances et visualisations.</p>
+  <span class="project-stack">Python · Pandas · Matplotlib</span>
+    <div class="external-link-box">
+      <p style="margin-bottom:1rem;color:#4b5563;">Projet en cours de publication. Revenez bientôt.</p>
+    </div>
+</main>
+</body>
+</html>

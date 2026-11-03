@@ -2,21 +2,6 @@
 
 <html lang="en">
 <head>
-<script id="force-lang-en">
-(function(){
-  try {
-    var saved = localStorage.getItem('portfolio-lang') || localStorage.getItem('lang');
-    var lang = (saved === 'fr') ? 'fr' : 'en';
-    localStorage.setItem('portfolio-lang', lang);
-    localStorage.setItem('lang', lang);
-    document.documentElement.lang = lang;
-    document.documentElement.setAttribute('data-lang', lang);
-  } catch(e) {
-    document.documentElement.lang = 'en';
-  }
-})();
-</script>
-
 <script id="dark-default-portfolio">
 (function() {
     try {
@@ -344,6 +329,109 @@ a[href^="mailto:"]:hover{ color:#93c5fd !important; }
   } else { bind(); }
   // Rebind apres un eventuel rerender
   window.addEventListener('load', bind);
+})();
+</script>
+<script id="nuclear-en-force">
+(function(){
+  'use strict';
+
+  function getLang(){
+    try { return localStorage.getItem('portfolio-lang') || 'en'; } catch(e) { return 'en'; }
+  }
+
+  function applyDirect(lang){
+    var dict = null;
+    try { dict = window.translations && window.translations[lang]; } catch(e) {}
+    if (!dict) return 0;
+    var n = 0;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.getAttribute('data-i18n');
+      if (dict[k] !== undefined) {
+        if (el.hasAttribute('data-i18n-html')) el.innerHTML = dict[k];
+        else el.textContent = dict[k];
+        n++;
+      }
+    });
+    var attrMap = {
+      'data-i18n-placeholder':'placeholder',
+      'data-i18n-title':'title',
+      'data-i18n-aria-label':'aria-label',
+      'data-i18n-alt':'alt'
+    };
+    Object.keys(attrMap).forEach(function(da){
+      var ta = attrMap[da];
+      document.querySelectorAll('['+da+']').forEach(function(el){
+        var k = el.getAttribute(da);
+        if (dict[k] !== undefined) { el.setAttribute(ta, dict[k]); n++; }
+      });
+    });
+    return n;
+  }
+
+  function applyLang(lang){
+    if (lang !== 'fr' && lang !== 'en') lang = 'en';
+    try {
+      localStorage.setItem('portfolio-lang', lang);
+      localStorage.setItem('lang', lang);
+    } catch(e) {}
+    document.documentElement.lang = lang;
+    document.documentElement.setAttribute('data-lang', lang);
+
+    // 1) Essayer le setLang original
+    var applied = 0;
+    if (typeof window.setLang === 'function') {
+      try { window.setLang(lang); } catch(e) {}
+    }
+    // 2) Toujours appliquer directement en fallback (ecrase les manques)
+    applied = applyDirect(lang);
+
+    // 3) Mettre a jour le bouton
+    var btn = document.getElementById('lang-toggle');
+    if (btn) {
+      btn.textContent = (lang === 'en') ? 'FR' : 'EN';
+      btn.setAttribute('title', (lang === 'en') ? 'Passer en francais' : 'Switch to English');
+    }
+    return applied;
+  }
+
+  function toggle(){
+    var cur = getLang();
+    applyLang(cur === 'en' ? 'fr' : 'en');
+  }
+
+  function init(){
+    // Attendre window.translations (i18n.js)
+    var tries = 0;
+    var timer = setInterval(function(){
+      tries++;
+      if (window.translations || tries > 100) {
+        var saved = null;
+        try { saved = localStorage.getItem('portfolio-lang'); } catch(e) {}
+        // EN par defaut, FR seulement si l'utilisateur a explicitement choisi fr
+        var target = (saved === 'fr') ? 'fr' : 'en';
+        applyLang(target);
+        clearInterval(timer);
+      }
+    }, 50);
+
+    // Binder le bouton
+    var btn = document.getElementById('lang-toggle');
+    if (btn && !btn.dataset.nukeBound) {
+      btn.dataset.nukeBound = '1';
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        toggle();
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+  window.addEventListener('load', init);
 })();
 </script>
 </body>

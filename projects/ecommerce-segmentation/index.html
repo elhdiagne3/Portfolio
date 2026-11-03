@@ -1,6 +1,21 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
+<script id="force-lang-en">
+(function(){
+  try {
+    var saved = localStorage.getItem('portfolio-lang') || localStorage.getItem('lang');
+    var lang = (saved === 'fr') ? 'fr' : 'en';
+    localStorage.setItem('portfolio-lang', lang);
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
+    document.documentElement.setAttribute('data-lang', lang);
+  } catch(e) {
+    document.documentElement.lang = 'en';
+  }
+})();
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Segmentation E-commerce — Portfolio Elhadji Diaraff DIAGNE</title>
@@ -35,7 +50,7 @@
       <li><a href="../../certifications.html" data-i18n="nav.certification">Certifications</a></li>
       <li><a href="../../index.html#contact" data-i18n="nav.contact">Contact</a></li>
       <li><button id="theme-toggle" class="icon-btn" aria-label="Theme">🌙</button></li>
-      <li><button id="lang-toggle" class="icon-btn" aria-label="Switch language">EN</button></li>
+      <li><button id="lang-toggle" class="icon-btn" aria-label="Switch language">FR</button></li>
     </ul>
   </nav>
 </header>

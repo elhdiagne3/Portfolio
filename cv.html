@@ -1,6 +1,21 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
+<script id="force-lang-en">
+(function(){
+  try {
+    var saved = localStorage.getItem('portfolio-lang') || localStorage.getItem('lang');
+    var lang = (saved === 'fr') ? 'fr' : 'en';
+    localStorage.setItem('portfolio-lang', lang);
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
+    document.documentElement.setAttribute('data-lang', lang);
+  } catch(e) {
+    document.documentElement.lang = 'en';
+  }
+})();
+</script>
+
 <script id="dark-default-portfolio">
 (function() {
     try {
@@ -67,7 +82,7 @@ a[href^="mailto:"]:hover{ color:#93c5fd !important; }
       <li><a href="cv.html" data-i18n="nav.cv">CV</a></li>
       <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
       <li><button id="theme-toggle" class="icon-btn" aria-label="Thème">🌙</button></li>
-      <li><button id="lang-toggle" class="icon-btn" aria-label="Switch language">EN</button></li>
+      <li><button id="lang-toggle" class="icon-btn" aria-label="Switch language">FR</button></li>
     </ul>
   </nav>
 <div class="cv-resident-badge" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:0.75rem;padding:0.4rem 0.9rem;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.4);border-radius:999px;font-size:0.9rem;font-weight:600;color:#22c55e;">

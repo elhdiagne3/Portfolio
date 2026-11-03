@@ -187,18 +187,27 @@ const translations = {
 
 function getCurrentLang() {
   var v = null;
-  try { v = localStorage.getItem('portfolio-lang'); } catch(e) {}
-  return (v === 'fr' || v === 'en') ? v : 'en';  // EN PAR DEFAUT
+  try {
+    v = localStorage.getItem('portfolio-lang') || localStorage.getItem('lang');
+  } catch(e) {}
+  // EN PAR DEFAUT
+  if (v === 'fr' || v === 'en') return v;
+  return 'en';
 }
 
 function setLang(lang) {
-  localStorage.setItem('portfolio-lang', lang);
+  if (lang !== 'fr' && lang !== 'en') lang = 'en';
+  try {
+    localStorage.setItem('portfolio-lang', lang);
+    localStorage.setItem('lang', lang);
+  } catch(e) {}
   document.documentElement.lang = lang;
+  document.documentElement.setAttribute('data-lang', lang);
   applyTranslations(lang);
 }
 
 function applyTranslations(lang) {
-  const dict = translations[lang] || translations.fr;
+  const dict = translations[lang] || translations.en;
 
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
@@ -251,6 +260,43 @@ function toggleLang() {
   window.toggleLang = toggleLang;
   window.getCurrentLang = getCurrentLang;
   window.translations = translations;
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+// ============ FIX NUC : INIT UNIQUE + EN PAR DEFAUT ============
+(function(){
+  'use strict';
+  window.translations = translations;
+  window.setLang = setLang;
+  window.toggleLang = toggleLang;
+  window.getCurrentLang = getCurrentLang;
+
+  function init(){
+    // Force EN par defaut si aucune preference
+    var cur = getCurrentLang();  // 'en' ou 'fr' memorise
+    setLang(cur);
+
+    // Bind bouton #lang-toggle
+    var btn = document.getElementById('lang-toggle');
+    if (btn && btn.dataset.i18nBound !== '1') {
+      btn.dataset.i18nBound = '1';
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        toggleLang();
+      });
+    }
+    // Mettre a jour le texte du bouton (FR si EN actif, EN si FR actif)
+    if (btn) {
+      btn.textContent = (cur === 'en') ? 'FR' : 'EN';
+      btn.setAttribute('title', (cur === 'en') ? 'Passer en francais' : 'Switch to English');
+    }
+  }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);

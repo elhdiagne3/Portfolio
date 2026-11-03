@@ -1,6 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<script id="force-lang-en">
+(function(){
+  try {
+    var saved = localStorage.getItem('portfolio-lang') || localStorage.getItem('lang');
+    var lang = (saved === 'fr') ? 'fr' : 'en';
+    localStorage.setItem('portfolio-lang', lang);
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
+    document.documentElement.setAttribute('data-lang', lang);
+  } catch(e) {
+    document.documentElement.lang = 'en';
+  }
+})();
+</script>
+
 <script id="dark-default-portfolio">
 (function() {
     try {

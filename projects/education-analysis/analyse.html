@@ -1,6 +1,21 @@
 <!DOCTYPE html>
-<html data-theme="light">
+<html data-theme="light" lang="en">
 <head>
+<script id="force-lang-en">
+(function(){
+  try {
+    var saved = localStorage.getItem('portfolio-lang') || localStorage.getItem('lang');
+    var lang = (saved === 'fr') ? 'fr' : 'en';
+    localStorage.setItem('portfolio-lang', lang);
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
+    document.documentElement.setAttribute('data-lang', lang);
+  } catch(e) {
+    document.documentElement.lang = 'en';
+  }
+})();
+</script>
+
 <script id="theme-init">
 (function(){try{var s=localStorage.getItem('theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
 </script>
